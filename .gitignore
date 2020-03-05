@@ -1,4 +1,9 @@
+
+
+# Unity directories
 Temp/
 Library/
 Logs/
+
+# MacOS
 .DS_Store
