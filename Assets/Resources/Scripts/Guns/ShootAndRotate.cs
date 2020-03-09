@@ -24,6 +24,8 @@ public class ShootAndRotate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Hide mouse cursos
+        Cursor.visible = false;
         // Get RigidBody of the gun
         rb = gameObject.GetComponent<Rigidbody2D>();
 
