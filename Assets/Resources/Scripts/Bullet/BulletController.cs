@@ -14,8 +14,11 @@ public class BulletController : MonoBehaviour {
     }
     
     // Detects if the collision is an object Foreground
+    // TODO: Change to OnTrigger2D
+    /*
     void OnCollisionEnter2D(Collision2D collision) {
        if (collision.gameObject.CompareTag("Foreground"))
             Destroy(gameObject);
     }
+    */
 }

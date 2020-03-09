@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootAndRotate : MonoBehaviour
+public class Rotate : MonoBehaviour
 {
     // Gun
     private GameObject gun;
     private Rigidbody2D rb;
 
     // Bullet
-    private Transform shootPoint;
     private GameObject bullet;
-    private float bulletForce = 25f;
+    private Shoot shoot;
     
     // Player hand
     private GameObject hand;
@@ -36,9 +35,9 @@ public class ShootAndRotate : MonoBehaviour
         gun = GameObject.Find("Gun");
 
         // TODO: If statement for that changes bullet depending on gun
-        // Get shootpoint transform and load bullet prefab
-        shootPoint = GameObject.Find("ShootPoint").transform;
-        bullet = (GameObject) Resources.Load("Prefabs/Bullets/Bullet", typeof(GameObject));
+        // Load bullet prefab
+        shoot = gameObject.GetComponent("Shoot") as Shoot;
+        bullet = (GameObject) Resources.Load(shoot.bulletPath, typeof(GameObject));
     }
 
     // Update is called once per frame
@@ -47,17 +46,6 @@ public class ShootAndRotate : MonoBehaviour
         followAimPoint();
         moveWithHand();
         rotateGun();
-
-        if (Input.GetButtonDown("Fire1")) {
-            Shoot();
-        }
-    }
-
-    // Instantiate bullet
-    void Shoot() {
-        GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
-        Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
-        bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
     }
 
     // Place gun in player hand
