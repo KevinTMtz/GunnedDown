@@ -11,7 +11,7 @@ public class ShootAndRotate : MonoBehaviour
     // Bullet
     private Transform shootPoint;
     private GameObject bullet;
-    private float bulletForce = 50f;
+    private float bulletForce = 25f;
     
     // Player hand
     private GameObject hand;
@@ -89,7 +89,7 @@ public class ShootAndRotate : MonoBehaviour
     // Move Aim Point
     void followAimPoint() {
         // Get vector relative to gun and mouse position in camera
-        Vector2 aim = GameObject.Find("ShootPoint").transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 aim = gameObject.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         aim *= -0.5f;
 
         // Get angle of the aim vector
