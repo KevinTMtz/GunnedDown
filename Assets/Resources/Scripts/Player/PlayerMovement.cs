@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Player movement
     void Movement() {
-        float movementFactor = 0.25f;
+        float movementFactor = 0.35f;
         float speedX = Input.GetAxis("Horizontal") * movementFactor;
         float speedY = Input.GetAxis("Vertical") * movementFactor;
         movementSpeed = new Vector3(speedX, speedY, 0f);
