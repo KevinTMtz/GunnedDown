@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Gun
   - Foreground
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Obstacle
   - 
   - 
   - 

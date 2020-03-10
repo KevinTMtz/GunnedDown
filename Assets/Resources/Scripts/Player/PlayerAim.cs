@@ -14,6 +14,9 @@ public class PlayerAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Hide mouse cursor
+        Cursor.visible = false;
+
         aimRb2D = aimPoint.GetComponent<Rigidbody2D>();
     }
 
