@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour {
+public class EnemyBulletController : MonoBehaviour
+{
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         Invoke("DestroyBullet", 3f);
     }
 
@@ -12,11 +14,11 @@ public class BulletController : MonoBehaviour {
     void DestroyBullet() {
         Destroy(gameObject);
     }
-    
-    // Detects if the collision is an object Foreground or enemy
+
+    // Detects if the collision is an object Foreground or player
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.tag.Equals("Player")) {
+        if (!other.tag.Equals("Enemy")) {
             Destroy(gameObject);
         }
     }
