@@ -30,15 +30,7 @@ public class Shoot : MonoBehaviour
 
     // Choose bullet depending on gun
     string SelectBullet() {
-        path = "Prefabs/Bullets/Bullet ";
-        string gameObjectName = gameObject.name;
-
-        if (gameObjectName.Equals("MegaGun")) {
-            path += "1";
-        } else if (gameObjectName.Equals("RedKiller")) {
-            path += "2";
-        }
-
+        path = "Prefabs/Bullets/Bullet" + gameObject.name.Substring(3,1);
         return path;
     }
 

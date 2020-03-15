@@ -43,9 +43,6 @@ public class Rotate : MonoBehaviour
     {
         followAimPoint();
         moveWithHand();
-    }
-
-    void FixedUpdate() {
         rotateGun();
     }
 

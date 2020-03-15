@@ -8,6 +8,7 @@ TagManager:
   - Foreground
   - Ground
   - Enemy
+  - ItemGun
   layers:
   - Default
   - TransparentFX
