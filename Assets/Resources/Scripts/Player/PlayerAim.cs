@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerAim : MonoBehaviour
 {
-    public GameObject aimPoint;
+    private GameObject aimPoint;
     private Rigidbody2D aimRb2D;
 
-    public Camera cam;
+    private Camera cam;
 
     private float angleOfAim = 0;
     
@@ -17,6 +17,7 @@ public class PlayerAim : MonoBehaviour
         //Hide mouse cursor
         Cursor.visible = false;
 
+        aimPoint = GameObject.Find("AimPoint");
         aimRb2D = aimPoint.GetComponent<Rigidbody2D>();
     }
 

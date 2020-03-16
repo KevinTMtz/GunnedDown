@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Enemy
   - ItemGun
+  - Bullet
   layers:
   - Default
   - TransparentFX

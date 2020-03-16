@@ -16,7 +16,7 @@ public class BulletController : MonoBehaviour {
     // Detects if the collision is an object Foreground or enemy
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.tag.Equals("Player")) {
+        if (!other.tag.Equals("Player") && !other.tag.Equals("Bullet")) {
             Destroy(gameObject);
         }
     }
