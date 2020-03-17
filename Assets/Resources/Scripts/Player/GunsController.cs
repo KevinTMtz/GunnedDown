@@ -26,9 +26,9 @@ public class GunsController : MonoBehaviour
         if(deltaScroll != 0 && wait && gunsInInventory.Count > 1){
             wait = false;
             StartCoroutine(waitToChange());
-            if (deltaScroll > 0)
-                ChangeWeapon(1);
             if (deltaScroll < 0)
+                ChangeWeapon(1);
+            if (deltaScroll > 0)
                 ChangeWeapon(-1);
         }
 
