@@ -54,6 +54,8 @@ public class GunsController : MonoBehaviour
 
         gunsInInventory[activeWeapon].transform.position = hand.position;
         gunsInInventory[activeWeapon].SetActive(true);
+
+        SoundManager.PlaySound("ShotgunLoad");
     }
     
     void OnTriggerEnter2D(Collider2D other) {
@@ -70,6 +72,8 @@ public class GunsController : MonoBehaviour
             activeWeapon = gunsInInventory.Count - 1;
             
             Destroy(other.gameObject);
+
+            SoundManager.PlaySound("LeatherInventory");
         }
     }
 }

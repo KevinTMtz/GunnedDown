@@ -39,6 +39,8 @@ public class Shoot : MonoBehaviour
         GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
         bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
+
+        SoundManager.PlaySound("Shoot2");
     }
 
     public string bulletPath {
