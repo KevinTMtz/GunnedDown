@@ -9,7 +9,7 @@ public class BulletController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 4f);
 
         explosion = (GameObject) Resources.Load("Prefabs/Effects/BulletExplosionEffect1", typeof(GameObject));
     }

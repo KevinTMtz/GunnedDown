@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
         sound5 = Resources.Load<AudioClip>("Sounds/Movement/wood02");
         sound6 = Resources.Load<AudioClip>("Sounds/Explosions/explodemini");
         sound7 = Resources.Load<AudioClip>("Sounds/Menu/positive");
+        sound8 = Resources.Load<AudioClip>("Sounds/Mix/metal_slide");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -44,6 +45,9 @@ public class SoundManager : MonoBehaviour
             case"MenuSound":
                 audioSrc.PlayOneShot(sound7, 1f);
                 break;
+            case"MetalSlide":
+            audioSrc.PlayOneShot(sound8, 1f);
+            break;
         }
     }
 }

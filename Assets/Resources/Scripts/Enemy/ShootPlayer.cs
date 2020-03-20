@@ -39,7 +39,7 @@ public class ShootPlayer : MonoBehaviour
     // Choose bullet depending on gun
     string SelectBullet() {
         path = "Prefabs/EnemyBullets/Bullet ";
-        string gameObjectName = gameObject.name;
+        string gameObjectName = gameObject.name.Substring(0,6);
 
         if (gameObjectName.Equals("Enemy1")) {
             path += "1";
