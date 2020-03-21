@@ -27,7 +27,7 @@ public class EnemyBulletController : MonoBehaviour {
 
             Instantiate(explosion, transform.position, transform.rotation);
 
-            SoundManager.PlaySound("Explosion");
+            //SoundManager.PlaySound("Explosion");
         }
     }
 }

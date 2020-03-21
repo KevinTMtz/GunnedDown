@@ -8,17 +8,21 @@ public class DoorController : MonoBehaviour
     private Transform player;
 
     private bool isOpen;
-
-    //We should have an array of Objectives (for now they would be to defeat all enemies in a room)
-    //private bool objectivesCompleted = true;
+    
+    private bool objectiveCompleted = true;
     
     private void Start() {
         isOpen = false;
+        
         player = GameObject.Find("Player").GetComponent<Transform>();
     }
     
     private void Update() {
-        if (Vector2.Distance(transform.position, player.position) < 4 && !isOpen) {
+        closeOrOpen();
+    }
+
+    private void closeOrOpen() {
+        if (Vector2.Distance(transform.position, player.position) < 4 && !isOpen && objectiveCompleted) {
             Open();
             isOpen = true;
         } else if (Vector2.Distance(transform.position, player.position) > 4 && isOpen) {
@@ -28,27 +32,17 @@ public class DoorController : MonoBehaviour
     }
     
     private void Open() {
-        //Debug.Log("Opening");
         SoundManager.PlaySound("MetalSlide");
         animator.SetBool("isOpen", true);
     }
     
     private void Close() {
-        //Debug.Log("Closing");
         SoundManager.PlaySound("MetalSlide");
         animator.SetBool("isOpen", false);
     }
 
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Debug.Log("Enter");
-        if(objectivesCompleted) Open();
+    public bool ObjectiveCompleted {
+        get { return objectiveCompleted; }
+        set { objectiveCompleted = value; }
     }
-    
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (objectivesCompleted) Close();
-    }
-    */
 }
