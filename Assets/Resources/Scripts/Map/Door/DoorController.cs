@@ -25,7 +25,7 @@ public class DoorController : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) < 4 && !isOpen && objectiveCompleted) {
             Open();
             isOpen = true;
-        } else if (Vector2.Distance(transform.position, player.position) > 4 && isOpen) {
+        } else if (Vector2.Distance(transform.position, player.position) > 4 && isOpen || (!objectiveCompleted) && isOpen) {
             Close();
             isOpen = false;
         }

@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - ItemGun
   - Bullet
+  - PassiveItem
   layers:
   - Default
   - TransparentFX

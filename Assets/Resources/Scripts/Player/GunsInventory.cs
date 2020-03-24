@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunsController : MonoBehaviour
+public class GunsInventory : MonoBehaviour
 {
     List<GameObject> gunsInInventory = new List<GameObject>();
     private GameObject pickedGun;
@@ -60,14 +60,14 @@ public class GunsController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("ItemGun")) {
-            string path = "Prefabs/Guns/Gun" + other.gameObject.name.Substring(7);
+            string path = "Prefabs/Guns/Gun" + other.gameObject.name.Substring(8);
             pickedGun = (GameObject) Resources.Load(path, typeof(GameObject));
             
             if (gunsInInventory.Count > 0)
                 gunsInInventory[activeWeapon].SetActive(false);
             
             Instantiate(pickedGun, transform.position, Quaternion.identity);
-            gunsInInventory.Add(GameObject.Find("Gun"+other.gameObject.name.Substring(7)+"(Clone)"));
+            gunsInInventory.Add(GameObject.Find("Gun"+other.gameObject.name.Substring(8)+"(Clone)"));
 
             activeWeapon = gunsInInventory.Count - 1;
             

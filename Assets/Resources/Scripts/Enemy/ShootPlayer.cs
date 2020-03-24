@@ -10,6 +10,8 @@ public class ShootPlayer : MonoBehaviour
     private float bulletForce = 10f;
     private string path;
 
+    private bool ableToShoot;
+
     // Cannon Rotation
     private float aimAngle;
 
@@ -18,6 +20,8 @@ public class ShootPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ableToShoot = true;
+        
         SelectBullet();
 
         // Get shootpoint transform and load bullet prefab
@@ -26,14 +30,26 @@ public class ShootPlayer : MonoBehaviour
         bullet = (GameObject) Resources.Load(path, typeof(GameObject));
 
         target = GameObject.Find("Player");
-
-        InvokeRepeating("ShootBullet",0.1f, 0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (ableToShoot) { 
+            StartCoroutine(ShootBullet());
+            ableToShoot = false;
+        }
+        
         rotateCannon();
+    }
+
+    IEnumerator ShootBullet() {
+        yield return new WaitForSeconds(0.5f);
+        GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+        Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
+        bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
+        
+        ableToShoot = true;
     }
 
     // Choose bullet depending on gun
@@ -48,13 +64,6 @@ public class ShootPlayer : MonoBehaviour
         }
 
         return path;
-    }
-
-    // Instantiate bullet
-    void ShootBullet() {
-        GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
-        Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
-        bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
     }
 
     // Move Aim Point
