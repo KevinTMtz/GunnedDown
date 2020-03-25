@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class ItemsInventory : MonoBehaviour
 {
-    List<GameObject> itemsInInventory = new List<GameObject>();
+    public static ItemsInventory instance;
+
+    void Awake () {
+        if (instance != null) {
+            Debug.LogWarning("More than one ItemInventory instance");
+            return;
+        }
+
+        instance = this;
+    }
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+    
+    public static List<GameObject> itemsInInventory = new List<GameObject>();
     private GameObject pickedItem;
     
     // Start is called before the first frame update
@@ -30,6 +44,10 @@ public class ItemsInventory : MonoBehaviour
             
             Instantiate(pickedItem, transform.position, Quaternion.identity);
             itemsInInventory.Add(GameObject.Find("PassiveItem"+other.gameObject.name.Substring(11)+"(Clone)"));
+            
+            // TODO: Add this to the remove method
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
             
             // TODO: Change Later, just hide the sprite
             itemsInInventory[itemsInInventory.Count-1].SetActive(false);
