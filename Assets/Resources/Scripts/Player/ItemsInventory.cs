@@ -30,11 +30,7 @@ public class ItemsInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J)) {
-            for (int i=0; i<itemsInInventory.Count; i++) {
-                itemsInInventory[i].SetActive(true);
-            } 
-        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other) {
