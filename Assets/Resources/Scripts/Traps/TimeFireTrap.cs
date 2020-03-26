@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeTrap : MonoBehaviour
+public class TimeFireTrap : MonoBehaviour
 {
+    private Transform childLight;
+
     private Animator animator;
 
     private bool ableToDamage;
@@ -20,6 +22,7 @@ public class TimeTrap : MonoBehaviour
         playerHealth = GameObject.Find("Player").GetComponent("PlayerHealth") as PlayerHealth;
         
         animator = GetComponent<Animator>();
+        childLight = transform.GetChild(0);
 
         ableToDamage = true;
     }
@@ -46,14 +49,16 @@ public class TimeTrap : MonoBehaviour
     IEnumerator activateDamageBox() {
         yield return new WaitForSeconds(waitTime);
         animator.SetBool("Working", true);
+        childLight.gameObject.SetActive(true);
 
-        SoundManager.PlaySound("Spikes");
-        
+        SoundManager.PlaySound("FireShot");
+
         if (onCollision) 
             playerHealth.decreaseHealth(damage);
 
         yield return new WaitForSeconds(durationTime);
         animator.SetBool("Working", false);
+        childLight.gameObject.SetActive(false);
         ableToDamage = true;
     }
 }

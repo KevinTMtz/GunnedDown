@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
+        // TODO: Rename sounds and order them
         sound1 = Resources.Load<AudioClip>("Sounds/Inventory/cloth-inventory");
         sound2 = Resources.Load<AudioClip>("Sounds/Inventory/leather_inventory");
         sound3 = Resources.Load<AudioClip>("Sounds/Guns/shotgun-load");
@@ -18,12 +19,18 @@ public class SoundManager : MonoBehaviour
         sound6 = Resources.Load<AudioClip>("Sounds/Explosions/explodemini");
         sound7 = Resources.Load<AudioClip>("Sounds/Menu/positive");
         sound8 = Resources.Load<AudioClip>("Sounds/Mix/metal_slide");
+        
+        // Dragon sounds
         sound9 = Resources.Load<AudioClip>("Sounds/Boss/Dragon_roar");
         sound10 = Resources.Load<AudioClip>("Sounds/Boss/DragonWings");
         sound11 = Resources.Load<AudioClip>("Sounds/Boss/fireball");
         sound12 = Resources.Load<AudioClip>("Sounds/Boss/Blitz");
         sound13 = Resources.Load<AudioClip>("Sounds/Boss/Burst");
         sound14 = Resources.Load<AudioClip>("Sounds/Boss/Dragon_growl");
+
+        // Traps sounds
+        spikes = Resources.Load<AudioClip>("Sounds/Traps/spikes");
+        fireShot = Resources.Load<AudioClip>("Sounds/Traps/fireShot");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -71,6 +78,12 @@ public class SoundManager : MonoBehaviour
                 break;
             case "DragonGrowl":
                 audioSrc.PlayOneShot(sound14, 1.75f);
+                break;
+            case "Spikes":
+                audioSrc.PlayOneShot(spikes, 0.35f);
+                break;
+            case "FireShot":
+                audioSrc.PlayOneShot(fireShot, 0.35f);
                 break;
         }
     }
