@@ -34,19 +34,19 @@ public class SoundManager : MonoBehaviour
                 audioSrc.PlayOneShot(sound1, 0.5f);
                 break;
             case"LeatherInventory":
-                audioSrc.PlayOneShot(sound2, 0.5f);
+                audioSrc.PlayOneShot(sound2, 0.35f);
                 break;
             case"ShotgunLoad":
-                audioSrc.PlayOneShot(sound3, 0.5f);
+                audioSrc.PlayOneShot(sound3, 0.35f);
                 break;
             case"Shoot2":
-                audioSrc.PlayOneShot(sound4, 0.35f);
+                audioSrc.PlayOneShot(sound4, 0.20f);
                 break;
             case"Steps":
                 audioSrc.PlayOneShot(sound5, 0.5f);
                 break;
             case"Explosion":
-                audioSrc.PlayOneShot(sound6, 0.20f);
+                audioSrc.PlayOneShot(sound6, 0.15f);
                 break;
             case"MenuSound":
                 audioSrc.PlayOneShot(sound7, 1f);
