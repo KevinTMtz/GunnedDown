@@ -22,7 +22,12 @@ public class BulletController : MonoBehaviour {
             enemyHealth.decreaseHealth(damage);
         }
         
-        if (!other.tag.Equals("Player") && !other.tag.Equals("Bullet")) {
+        if (other.tag.Equals("Boss")) {
+            BossHealth bossHealth = other.GetComponent<BossHealth>();
+            bossHealth.TakeDamage(damage);
+        }
+        
+        if (!other.tag.Equals("Player") && !other.tag.Equals("Bullet") && !other.tag.Equals("Hole")) {
             Destroy(gameObject);
 
             Instantiate(explosion, transform.position, transform.rotation);

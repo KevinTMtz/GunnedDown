@@ -11,6 +11,7 @@ TagManager:
   - ItemGun
   - Bullet
   - PassiveItem
+  - Hole
   layers:
   - Default
   - TransparentFX
