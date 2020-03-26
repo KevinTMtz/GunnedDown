@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossHealth: MonoBehaviour
 {
     public int health;
-    public bool invulnerable;
+    private bool invulnerable;
     public Animator animator;
     private bool roar1, roar2;
 
@@ -23,7 +23,7 @@ public class BossHealth: MonoBehaviour
     {
         if (invulnerable)
         {
-            Debug.Log("The enemy is invulnerable");
+            //Debug.Log("The enemy is invulnerable");
             return;
         }
         else
@@ -72,11 +72,11 @@ public class BossHealth: MonoBehaviour
     public void ActivateInvulnerability()
     {
         invulnerable = true;
-        Debug.Log("Activating invulnerability");
+        //Debug.Log("Activating invulnerability");
     }
     public void DeactivateInvulnerability()
     {
         invulnerable = false;
-        Debug.Log("Deactivating invulnerability");
+        //Debug.Log("Deactivating invulnerability");
     }
 }

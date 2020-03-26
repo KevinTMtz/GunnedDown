@@ -7,17 +7,27 @@ public class RoomController : MonoBehaviour
 {
     public DoorController[] doors;
     
+    // For checking the objective
+    public bool hasEnemies;
     public List<GameObject> toKill = new List<GameObject>();
-    
     private List<GameObject> temp = new List<GameObject>();
-
     private BoxCollider2D bC2D;
 
-    public bool hasEnemies;
+    // For controlling the camera
+    public bool hasCameraControl;
+    private GameObject objectCam;
+    private Camera cam;
+    public Vector3 camPosition;
+    public float camSize;
     
     // Start is called before the first frame update
     void Start()
     {
+        if (hasCameraControl) {
+            objectCam = GameObject.Find("Main Camera");
+            cam = objectCam.GetComponent<Camera>();
+        }
+        
         if (hasEnemies)
             foreach (GameObject item in toKill)
                 item.SetActive(false);
@@ -42,6 +52,11 @@ public class RoomController : MonoBehaviour
             for (int i=0; i<doors.Length; i++)
                 doors[i].ObjectiveCompleted = true; 
             
+            if (hasCameraControl) {
+                objectCam.GetComponent<CameraMovement>().enabled = true;
+                cam.orthographicSize = 8;
+            }
+            
             // Stop script runnning
             enabled = false;
         }
@@ -58,6 +73,12 @@ public class RoomController : MonoBehaviour
 
             if (bC2D != null)
                 bC2D.enabled = false;
+
+            if (hasCameraControl) {
+                objectCam.GetComponent<CameraMovement>().enabled = false;
+                cam.orthographicSize = camSize;
+                objectCam.transform.position = camPosition;
+            }
         }
     }
 }

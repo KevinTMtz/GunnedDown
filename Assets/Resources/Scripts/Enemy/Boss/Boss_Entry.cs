@@ -7,7 +7,7 @@ public class Boss_Entry : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Entry");
+        //Debug.Log("Entry");
         animator.GetComponent<BossHealth>().ActivateInvulnerability();
     }
 
