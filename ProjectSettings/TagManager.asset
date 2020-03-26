@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - PassiveItem
   - Hole
+  - Boss
   layers:
   - Default
   - TransparentFX

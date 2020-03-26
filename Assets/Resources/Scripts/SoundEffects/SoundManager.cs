@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -18,6 +18,12 @@ public class SoundManager : MonoBehaviour
         sound6 = Resources.Load<AudioClip>("Sounds/Explosions/explodemini");
         sound7 = Resources.Load<AudioClip>("Sounds/Menu/positive");
         sound8 = Resources.Load<AudioClip>("Sounds/Mix/metal_slide");
+        sound9 = Resources.Load<AudioClip>("Sounds/Boss/Dragon_roar");
+        sound10 = Resources.Load<AudioClip>("Sounds/Boss/DragonWings");
+        sound11 = Resources.Load<AudioClip>("Sounds/Boss/fireball");
+        sound12 = Resources.Load<AudioClip>("Sounds/Boss/Blitz");
+        sound13 = Resources.Load<AudioClip>("Sounds/Boss/Burst");
+        sound14 = Resources.Load<AudioClip>("Sounds/Boss/Dragon_growl");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -46,8 +52,26 @@ public class SoundManager : MonoBehaviour
                 audioSrc.PlayOneShot(sound7, 1f);
                 break;
             case"MetalSlide":
-            audioSrc.PlayOneShot(sound8, 1f);
-            break;
+                audioSrc.PlayOneShot(sound8, 1f);
+                break;
+            case "DragonRoar":
+                audioSrc.PlayOneShot(sound9, 0.75f);
+                break;
+            case "DragonWings":
+                audioSrc.PlayOneShot(sound10, 0.125f);
+                break;
+            case "Fireball":
+                audioSrc.PlayOneShot(sound11, 0.75f);
+                break;
+            case "Blitz":
+                audioSrc.PlayOneShot(sound12, 0.75f);
+                break;
+            case "Burst":
+                audioSrc.PlayOneShot(sound13, 0.75f);
+                break;
+            case "DragonGrowl":
+                audioSrc.PlayOneShot(sound14, 1.75f);
+                break;
         }
     }
 }
