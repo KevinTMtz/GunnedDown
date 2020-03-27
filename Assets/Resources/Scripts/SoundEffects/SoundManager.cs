@@ -66,7 +66,6 @@ public class SoundManager : MonoBehaviour
 
     // FindObjectOfType<SoundManager>().Play("SongName");
     // SoundManager.PlaySound("SongName");
-
     // FindObjectOfType<SoundManager>().StopPlaying("sound string name");
 
     public void Play(string name) {
@@ -82,6 +81,7 @@ public class SoundManager : MonoBehaviour
 
     public void StopPlaying (string sound) {
         Sound s = Array.Find(sounds, item => item.name == sound);
+        
         if (s == null) {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;

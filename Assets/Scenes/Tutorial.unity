@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8605,50 +8605,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &976545572
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 976545573}
-  - component: {fileID: 976545574}
-  m_Layer: 0
-  m_Name: MainThemePlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &976545573
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976545572}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.68675, y: 117.46332, z: -1426.8356}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &976545574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976545572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744e23779c1fd41b0b2c8a27da72caee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainTheme: MainTheme
 --- !u!1 &981117454
 GameObject:
   m_ObjectHideFlags: 0
@@ -60866,6 +60822,50 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &983028876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983028878}
+  - component: {fileID: 983028877}
+  m_Layer: 0
+  m_Name: SongPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &983028877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983028876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744e23779c1fd41b0b2c8a27da72caee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainTheme: MainTheme
+--- !u!4 &983028878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983028876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &985646723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67097,16 +67097,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5254710512587555450, guid: 384dfa76b90e9424c8d1eacfafddec76,
-        type: 3}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 0.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 5254710512587555450, guid: 384dfa76b90e9424c8d1eacfafddec76,
-        type: 3}
-      propertyPath: sounds.Array.data[1].pitch
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5254710512587555451, guid: 384dfa76b90e9424c8d1eacfafddec76,
         type: 3}

@@ -144,12 +144,10 @@ MonoBehaviour:
   - name: MainTheme
     clip: {fileID: 8300000, guid: 1c8d5b57833fa4836a36ad3ac816517e, type: 3}
     volume: 0.75
-    pitch: 0
     loop: 1
     source: {fileID: 0}
   - name: Boos1Figth
     clip: {fileID: 8300000, guid: 22f4e207921ac4f28976529d6fd0d2a5, type: 3}
     volume: 0.75
-    pitch: 0
     loop: 1
     source: {fileID: 0}
