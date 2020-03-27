@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5254710512587555449}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.45, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -140,3 +140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d0bc268bc394cfc900b4108f58fa27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: 1c8d5b57833fa4836a36ad3ac816517e, type: 3}
+    volume: 0.75
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Boos1Figth
+    clip: {fileID: 8300000, guid: 22f4e207921ac4f28976529d6fd0d2a5, type: 3}
+    volume: 0.75
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}

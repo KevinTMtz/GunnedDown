@@ -19,6 +19,11 @@ public class RoomController : MonoBehaviour
     private Camera cam;
     public Vector3 camPosition;
     public float camSize;
+
+    // For controlling music
+    public bool hasMusicControl;
+    public string mainTheme;
+    public string fightMusic;
     
     // Start is called before the first frame update
     void Start()
@@ -56,6 +61,11 @@ public class RoomController : MonoBehaviour
                 objectCam.GetComponent<CameraMovement>().enabled = true;
                 cam.orthographicSize = 8;
             }
+
+            if (hasMusicControl) {
+                FindObjectOfType<SoundManager>().Play(mainTheme);
+                FindObjectOfType<SoundManager>().StopPlaying(fightMusic);
+            }
             
             // Stop script runnning
             enabled = false;
@@ -78,6 +88,11 @@ public class RoomController : MonoBehaviour
                 objectCam.GetComponent<CameraMovement>().enabled = false;
                 cam.orthographicSize = camSize;
                 objectCam.transform.position = camPosition;
+            }
+
+            if (hasMusicControl) {
+                FindObjectOfType<SoundManager>().StopPlaying(mainTheme);
+                FindObjectOfType<SoundManager>().Play(fightMusic);
             }
         }
     }

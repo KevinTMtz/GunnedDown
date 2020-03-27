@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8de2bce29754aec9d2a66e10b21e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 1
+  waitTime: 0.5
   durationTime: 0.56
   damage: 5
 --- !u!61 &3103540255137630848
