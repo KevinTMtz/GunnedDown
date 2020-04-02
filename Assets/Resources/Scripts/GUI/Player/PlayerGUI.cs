@@ -68,6 +68,7 @@ public class PlayerGUI : MonoBehaviour
 
     public void Restart() {
         PlayMenuSound();
+        FindObjectOfType<SoundManager>().StopAllSongs();
         // TODO: Change later
         ItemsInventory.itemsInInventory.Clear();
         SceneManager.LoadScene(activeScene.name);
@@ -79,6 +80,7 @@ public class PlayerGUI : MonoBehaviour
 
     public void ReturnToMenu() {
         PlayMenuSound();
+        FindObjectOfType<SoundManager>().StopAllSongs();
         // TODO: Change later
         ItemsInventory.itemsInInventory.Clear();
         SceneManager.LoadScene("MainMenu");

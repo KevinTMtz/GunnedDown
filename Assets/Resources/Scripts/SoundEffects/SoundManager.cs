@@ -90,6 +90,11 @@ public class SoundManager : MonoBehaviour
         s.source.Stop();
     }
 
+    public void StopAllSongs () {
+        for (int i=0; i<sounds.Length; i++) {
+            sounds[i].source.Stop();
+        }
+    }
     
     public static void PlaySound (string clip) {
         switch (clip) {

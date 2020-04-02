@@ -41,8 +41,11 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        followAimPoint();
         moveWithHand();
+    }
+
+    void FixedUpdate() {
+        followAimPoint();
         rotateGun();
     }
 

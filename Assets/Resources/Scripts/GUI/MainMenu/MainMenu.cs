@@ -8,9 +8,27 @@ public class MainMenu : MonoBehaviour
     void Start() {
     }
 
-    public void Play() {
+    public void PlayTutorial() {
         PlayMenuSound();
         SceneManager.LoadScene("Tutorial");
+    }
+
+    public void PlayLevel1() {
+        PlayMenuSound();
+        //SceneManager.LoadScene("Level1");
+        Debug.LogWarning("Scene for Level 1 does not exist");
+    }
+    
+    public void PlayLevel2() {
+        PlayMenuSound();
+        //SceneManager.LoadScene("Level2");
+        Debug.LogWarning("Scene for Level 2 does not exist");
+    }
+
+    public void PlayLevel3() {
+        PlayMenuSound();
+        //SceneManager.LoadScene("Level3");
+        Debug.LogWarning("Scene for Level 3 does not exist");
     }
 
     public void QuitGame() {
