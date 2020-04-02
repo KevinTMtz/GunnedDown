@@ -9,6 +9,13 @@ public class Shoot : MonoBehaviour
     private GameObject bullet;
     private float bulletForce = 25f;
     private string path;
+
+    public float shootWaitTime;
+    private bool wait;
+    private float startTime;
+    private float endTime;
+
+    private bool heldOn;
     
     // Start is called before the first frame update
     void Start()
@@ -18,13 +25,32 @@ public class Shoot : MonoBehaviour
         // Get shootpoint transform and load bullet prefab
         shootPoint = GameObject.Find("ShootPoint").transform;
         bullet = (GameObject) Resources.Load(path, typeof(GameObject));
+
+        wait = true;
+    }
+
+    public void RestartValues() {
+        heldOn = false;
+        wait = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0) {
+        if (Input.GetButtonDown("Fire1"))
+            heldOn = true;
+
+        if (Input.GetButtonUp("Fire1"))
+            heldOn = false;
+
+        if (Time.time > endTime && wait == false)
+            wait = true;
+
+        if ((Input.GetButtonDown("Fire1") || heldOn) && wait && Time.timeScale != 0) {
             ShootBullet();
+            startTime = Time.time;
+            endTime = startTime + shootWaitTime;
+            wait = false;
         }
     }
 

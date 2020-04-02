@@ -24,7 +24,6 @@ public class GunsInventory : MonoBehaviour
         
         //Debug.Log(deltaScroll);
         if(deltaScroll != 0 && wait && gunsInInventory.Count > 1){
-            wait = false;
             StartCoroutine(waitToChange());
             if (deltaScroll < 0)
                 ChangeWeapon(1);
@@ -38,6 +37,7 @@ public class GunsInventory : MonoBehaviour
     }
     
     IEnumerator waitToChange() {
+        wait = false;
         yield return new WaitForSeconds(0.25f);
         wait = true;
     }
@@ -53,6 +53,7 @@ public class GunsInventory : MonoBehaviour
             activeWeapon += delta;
 
         gunsInInventory[activeWeapon].transform.position = hand.position;
+        gunsInInventory[activeWeapon].GetComponent<Shoot>().RestartValues();
         gunsInInventory[activeWeapon].SetActive(true);
 
         SoundManager.PlaySound("ShotgunLoad");
