@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4885,10 +4885,12 @@ MonoBehaviour:
     - Change
     weapon with scroll wheel or tab
 
-    - Open inventory with E
+    - Activate shield with f
 
-    - Pause game
-    with Esc'
+    - Open inventory
+    with E
+
+    - Pause game with Esc'
 --- !u!222 &834630102
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -66115,7 +66117,7 @@ PrefabInstance:
     - target: {fileID: 7845101602360083653, guid: 717ea20a8047f4191a42ef8a1ca6ea4b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845101602360083653, guid: 717ea20a8047f4191a42ef8a1ca6ea4b,
         type: 3}

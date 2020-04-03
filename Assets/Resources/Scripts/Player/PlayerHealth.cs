@@ -7,6 +7,9 @@ public class PlayerHealth : MonoBehaviour
     private int health;
     private bool isKill;
 
+    [HideInInspector]
+    public bool invinsible;
+
     private HealthBar healthBar;
     
     // Start is called before the first frame update
@@ -29,11 +32,12 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void decreaseHealth(int damage) {
-        if (health - damage < 0) {
-            health = 0;
-        } else {
-            health -= damage;
-        }
+        if (!invinsible)
+            if (health - damage < 0) {
+                health = 0;
+            } else {
+                health -= damage;
+            }
 
         healthBar.SetHealth(health);
     }
