@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2103565267985057791}
   - component: {fileID: 2103565267985057280}
   - component: {fileID: 2103565267985057789}
-  - component: {fileID: 2560342956843312603}
   - component: {fileID: 1031912807241238469}
   m_Layer: 0
   m_Name: ForceShield
@@ -122,18 +121,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.029802322}
   serializedVersion: 2
   m_Radius: 0.887424
---- !u!114 &2560342956843312603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103565267985057281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282d02b283f6c4cda9dde5b9162ad058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1031912807241238469
 AudioSource:
   m_ObjectHideFlags: 0

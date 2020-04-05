@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunsInventory : MonoBehaviour
 {
@@ -10,11 +11,16 @@ public class GunsInventory : MonoBehaviour
     private bool wait = true;
 
     private Transform hand;
+
+    // For the interface
+    private Image gunImage;
     
     // Start is called before the first frame update
     void Start()
     {
         hand = GameObject.Find("Hand").GetComponent<Transform>();
+
+        gunImage = GameObject.Find("GunImage").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -56,6 +62,8 @@ public class GunsInventory : MonoBehaviour
         gunsInInventory[activeWeapon].GetComponent<Shoot>().RestartValues();
         gunsInInventory[activeWeapon].SetActive(true);
 
+        ChangeSpriteInInterface();
+
         SoundManager.PlaySound("ShotgunLoad");
     }
     
@@ -71,10 +79,17 @@ public class GunsInventory : MonoBehaviour
             gunsInInventory.Add(GameObject.Find("Gun"+other.gameObject.name.Substring(8)+"(Clone)"));
 
             activeWeapon = gunsInInventory.Count - 1;
+
+            ChangeSpriteInInterface();
             
             Destroy(other.gameObject);
 
             SoundManager.PlaySound("LeatherInventory");
         }
+    }
+
+    private void ChangeSpriteInInterface() {
+        gunImage.sprite = gunsInInventory[activeWeapon].transform.Find("Gun").GetComponent<SpriteRenderer>().sprite;
+        gunImage.color = new Color(gunImage.color.r, gunImage.color.g, gunImage.color.b, 1f);
     }
 }

@@ -28,22 +28,19 @@ public class ActivateForceShield : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && wait) {
-            StartCoroutine(waitToRepeat());
             StartCoroutine(playerInvinsible());
             GameObject shieldInstance = Instantiate(forceShield, transform.position, transform.rotation);
             shieldInstance.transform.parent = gameObject.transform;
+            Destroy(shieldInstance, 1f);
         }
     }
 
     IEnumerator playerInvinsible() {
         playerHealth.invinsible = true;
-        yield return new WaitForSeconds(2f);
-        playerHealth.invinsible = false;
-    }
-
-    IEnumerator waitToRepeat() {
         wait = false;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
+        playerHealth.invinsible = false;
+        yield return new WaitForSeconds(4f);
         wait = true;
     }
 }
