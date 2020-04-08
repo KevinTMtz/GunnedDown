@@ -10,6 +10,7 @@ public class PlayerGUI : MonoBehaviour
     public GameObject pauseMenuBackground;
     public GameObject inventoryMenu;
     public GameObject pauseMenu;
+    public GameObject dialogueMenu;
 
     private Scene activeScene;
     
@@ -23,10 +24,10 @@ public class PlayerGUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && Time.timeScale != 0)
             ShowPauseMenu();
 
-        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive)
+        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && Time.timeScale != 0)
             ShowInventory();
     }
 
@@ -88,5 +89,9 @@ public class PlayerGUI : MonoBehaviour
 
     public void PlayMenuSound() {
         SoundManager.PlaySound("MenuSound");
+    }
+
+    public GameObject DialoguePanel {
+        get { return dialogueMenu; }
     }
 }
