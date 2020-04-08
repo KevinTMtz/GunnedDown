@@ -91,4 +91,8 @@ public class DialogueManager : MonoBehaviour
 
         isWriting = false;
     }
+
+    public bool DialoguePanelIsActive {
+        get { return isActive; }
+    }
 }

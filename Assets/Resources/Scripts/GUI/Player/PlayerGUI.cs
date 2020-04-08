@@ -13,21 +13,27 @@ public class PlayerGUI : MonoBehaviour
     public GameObject dialogueMenu;
 
     private Scene activeScene;
+
+    private DialogueManager dialogueManager;
     
     void Start() {
         Time.timeScale = 1;
         pauseMenuActive = false;
         inventoryMenuActive = false;
         activeScene = SceneManager.GetActiveScene();
+
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
     
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && Time.timeScale != 0)
+        bool dialogueCheck = dialogueManager.DialoguePanelIsActive;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && !dialogueCheck)
             ShowPauseMenu();
 
-        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && Time.timeScale != 0)
+        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && !dialogueCheck)
             ShowInventory();
     }
 
