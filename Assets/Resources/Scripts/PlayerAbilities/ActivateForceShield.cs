@@ -27,7 +27,7 @@ public class ActivateForceShield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && wait && Time.timeScale != 0) {
+        if (Input.GetButtonDown("Fire2") && wait && Time.timeScale != 0) {
             StartCoroutine(playerInvinsible());
             GameObject shieldInstance = Instantiate(forceShield, transform.position, transform.rotation);
             shieldInstance.transform.parent = gameObject.transform;

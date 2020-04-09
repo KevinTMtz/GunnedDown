@@ -20,6 +20,8 @@ public class Rotate : MonoBehaviour
     private float aimAngle;
     private bool isFlipped = false;
 
+    private GameObject muzzle1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,8 @@ public class Rotate : MonoBehaviour
         // Load bullet prefab
         shoot = gameObject.GetComponent("Shoot") as Shoot;
         bullet = (GameObject) Resources.Load(shoot.bulletPath, typeof(GameObject));
+
+        muzzle1 = (GameObject) Resources.Load("Prefabs/Effects/ShotEffect1", typeof(GameObject));
     }
 
     // Update is called once per frame
@@ -71,9 +75,11 @@ public class Rotate : MonoBehaviour
         if (aimAngle > 22.5 && aimAngle < 157.5) {
             gun.GetComponent<SpriteRenderer>().sortingOrder = 9;
             bullet.GetComponent<SpriteRenderer>().sortingOrder = 8;
+            muzzle1.GetComponent<SpriteRenderer>().sortingOrder = 8;
         } else {
             gun.GetComponent<SpriteRenderer>().sortingOrder = 12;
             bullet.GetComponent<SpriteRenderer>().sortingOrder = 11;
+            muzzle1.GetComponent<SpriteRenderer>().sortingOrder = 11;
         }
     }
 

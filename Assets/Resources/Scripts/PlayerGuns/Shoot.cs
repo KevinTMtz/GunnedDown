@@ -16,6 +16,8 @@ public class Shoot : MonoBehaviour
     private float endTime;
 
     private bool heldOn;
+
+    private GameObject muzzle1;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,8 @@ public class Shoot : MonoBehaviour
         // Get shootpoint transform and load bullet prefab
         shootPoint = GameObject.Find("ShootPoint").transform;
         bullet = (GameObject) Resources.Load(path, typeof(GameObject));
+
+        muzzle1 = (GameObject) Resources.Load("Prefabs/Effects/ShotEffect1", typeof(GameObject));
 
         wait = true;
     }
@@ -63,6 +67,9 @@ public class Shoot : MonoBehaviour
     // Instantiate bullet
     void ShootBullet() {
         GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+        GameObject muzzle = Instantiate(muzzle1, shootPoint.position, shootPoint.rotation);
+        muzzle.transform.SetParent(shootPoint);
+
         Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
         bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
 
