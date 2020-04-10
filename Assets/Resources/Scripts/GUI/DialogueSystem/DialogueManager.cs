@@ -85,7 +85,7 @@ public class DialogueManager : MonoBehaviour
             } else {
                 dialoguePanelText.text += letter;
                 
-                yield return new WaitForSecondsRealtime(0.05f);
+                yield return new WaitForSecondsRealtime(0.035f);
             }
         }
 

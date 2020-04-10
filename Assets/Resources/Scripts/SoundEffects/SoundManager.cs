@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt;
     static AudioSource audioSrc;
 
     public static SoundManager instance;
@@ -36,6 +36,9 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Player
+        hurt = Resources.Load<AudioClip>("Sounds/Mix/hurt");
+        
         // TODO: Rename sounds and order them
         sound1 = Resources.Load<AudioClip>("Sounds/Inventory/cloth-inventory");
         sound2 = Resources.Load<AudioClip>("Sounds/Inventory/leather_inventory");
@@ -43,7 +46,6 @@ public class SoundManager : MonoBehaviour
         sound4 = Resources.Load<AudioClip>("Sounds/Guns/Shoot2");
         sound5 = Resources.Load<AudioClip>("Sounds/Movement/wood02");
         sound6 = Resources.Load<AudioClip>("Sounds/Explosions/explodemini");
-        sound7 = Resources.Load<AudioClip>("Sounds/Menu/positive");
         sound8 = Resources.Load<AudioClip>("Sounds/Mix/metal_slide");
         
         // Boss 1 sounds
@@ -59,7 +61,11 @@ public class SoundManager : MonoBehaviour
         fireShot = Resources.Load<AudioClip>("Sounds/Traps/fireShot");
 
         // Music
-        
+
+
+        // GUI
+        sound7 = Resources.Load<AudioClip>("Sounds/Menu/positive");
+        typing = Resources.Load<AudioClip>("Sounds/Mix/typing");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -98,6 +104,11 @@ public class SoundManager : MonoBehaviour
     
     public static void PlaySound (string clip) {
         switch (clip) {
+            // Player
+            case "Hurt":
+                audioSrc.PlayOneShot(hurt, 1f);
+                break;
+
             case"ClothInventory":
                 audioSrc.PlayOneShot(sound1, 0.5f);
                 break;
@@ -115,9 +126,6 @@ public class SoundManager : MonoBehaviour
                 break;
             case"Explosion":
                 audioSrc.PlayOneShot(sound6, 0.15f);
-                break;
-            case"MenuSound":
-                audioSrc.PlayOneShot(sound7, 1f);
                 break;
             case"MetalSlide":
                 audioSrc.PlayOneShot(sound8, 1f);
@@ -152,7 +160,14 @@ public class SoundManager : MonoBehaviour
                 break;
 
             // Music 
-            
+
+            // GUI
+            case "Typing":
+                audioSrc.PlayOneShot(typing, 1f);
+                break;
+            case "MenuSound":
+                audioSrc.PlayOneShot(sound7, 1f);
+                break;
         }
     }
 }

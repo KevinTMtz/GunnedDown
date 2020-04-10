@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public bool invinsible;
 
     private HealthBar healthBar;
+
+    private GameObject blood1;
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar = GameObject.Find("HealthBar").GetComponent("HealthBar") as HealthBar;
         healthBar.SetMaxHealth(health);
+
+        blood1 = (GameObject) Resources.Load("Prefabs/Effects/BloodEffect1", typeof(GameObject));
     }
 
     // Update is called once per frame
@@ -40,6 +44,9 @@ public class PlayerHealth : MonoBehaviour
             }
 
         healthBar.SetHealth(health);
+        GameObject blood = Instantiate(blood1, transform.position, transform.rotation);
+        blood.transform.SetParent(transform);
+        SoundManager.PlaySound("Hurt");
     }
 
     void OnTriggerEnter2D(Collider2D other)
