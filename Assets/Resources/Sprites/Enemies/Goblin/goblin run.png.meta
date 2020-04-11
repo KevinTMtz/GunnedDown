@@ -1,0 +1,347 @@
+fileFormatVersion: 2
+guid: 5a6d8643fb92b42babbc88a1ccf0bea1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6360110322613121548
+    second: goblin run_0
+  - first:
+      213: 1386563969919137866
+    second: goblin run_1
+  - first:
+      213: 2608134154897697519
+    second: goblin run_2
+  - first:
+      213: 1042463876623747289
+    second: goblin run_3
+  - first:
+      213: -4606006083475609183
+    second: goblin run_4
+  - first:
+      213: -566511706981444471
+    second: goblin run_5
+  - first:
+      213: -3550293330883345918
+    second: goblin run_6
+  - first:
+      213: 7596882725534741124
+    second: goblin run_7
+  - first:
+      213: -361826636276813356
+    second: goblin run_8
+  - first:
+      213: -6230835898398121993
+    second: goblin run_9
+  - first:
+      213: -5278164264809641099
+    second: goblin run_10
+  - first:
+      213: -4158258308146352045
+    second: goblin run_11
+  - first:
+      213: 6497059821813984383
+    second: goblin run_12
+  - first:
+      213: 3656978332567849607
+    second: goblin run_13
+  - first:
+      213: -6245390773586815468
+    second: goblin run_14
+  - first:
+      213: 889428703288562873
+    second: goblin run_15
+  - first:
+      213: 5887732582258682623
+    second: goblin run_16
+  - first:
+      213: -827891844959932734
+    second: goblin run_17
+  - first:
+      213: 9001194344281738732
+    second: goblin run_18
+  - first:
+      213: 1409119950892341500
+    second: goblin run_19
+  - first:
+      213: -3530123501592903842
+    second: goblin run_20
+  - first:
+      213: 189151682149694011
+    second: goblin run_21
+  - first:
+      213: 4211594456016933014
+    second: goblin run_22
+  - first:
+      213: 5789928927179837368
+    second: goblin run_23
+  - first:
+      213: -3367227495768070271
+    second: goblin run_24
+  - first:
+      213: 7738384179597501438
+    second: goblin run_25
+  - first:
+      213: 2496791071569502537
+    second: goblin run_26
+  - first:
+      213: 1022867216593358637
+    second: goblin run_27
+  - first:
+      213: -8640502088135461939
+    second: goblin run_28
+  - first:
+      213: 7137512845739937774
+    second: goblin run_29
+  - first:
+      213: -568920590357720031
+    second: goblin run_30
+  - first:
+      213: 1185047416094734971
+    second: goblin run_31
+  - first:
+      213: -3594967472919577670
+    second: goblin run_32
+  - first:
+      213: 7200438221290399974
+    second: goblin run_33
+  - first:
+      213: -7071405425386338627
+    second: goblin run_34
+  - first:
+      213: 9083941730054066870
+    second: goblin run_35
+  - first:
+      213: 1486931921860954547
+    second: goblin run_36
+  - first:
+      213: 7241342439155116852
+    second: goblin run_37
+  - first:
+      213: -5083980565798082411
+    second: goblin run_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: goblin run_0
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 102
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd8950eb595cb7a0800000000000000
+      internalID: -6360110322613121548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goblin run_1
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 102
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48b26595901e3310800000000000000
+      internalID: 1386563969919137866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goblin run_2
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 102
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feaad350234f13420800000000000000
+      internalID: 2608134154897697519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goblin run_3
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 102
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8c5516f53977e00800000000000000
+      internalID: 1042463876623747289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goblin run_4
+      rect:
+        serializedVersion: 2
+        x: 2890
+        y: 102
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9e529eedd2410c0800000000000000
+      internalID: -4606006083475609183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goblin run_5
+      rect:
+        serializedVersion: 2
+        x: 3560
+        y: 102
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9845540aa985328f0800000000000000
+      internalID: -566511706981444471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

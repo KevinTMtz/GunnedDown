@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 832225733080038855}
   - component: {fileID: 832225733080038848}
   m_Layer: 0
-  m_Name: ItemGun2
+  m_Name: DummyGun2
   m_TagString: ItemGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,13 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -8182361324190072146, guid: 76f644a47b2fa47d58999de805e745d4,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d697410617c2485eabbe81831591417, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.73333335, y: 0.53333336}
+  m_Size: {x: 1.1, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,18 +96,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28790715, y: 0.13306183}
+  m_Offset: {x: 0.25455105, y: -0.031915188}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.10992432, y: 0.22016335}
+    pivot: {x: 0.175, y: 0.50000006}
     oldSize: {x: 0.73333335, y: 0.53333336}
-    newSize: {x: 0.73333335, y: 0.53333336}
+    newSize: {x: 1.1, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73703665, y: 0.43015838}
+  m_Size: {x: 0.7063854, y: 0.468022}
   m_EdgeRadius: 0
 --- !u!1001 &4844202244781746043
 PrefabInstance:

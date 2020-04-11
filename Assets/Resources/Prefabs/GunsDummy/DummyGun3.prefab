@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 832225733080038855}
   - component: {fileID: 832225733080038848}
   m_Layer: 0
-  m_Name: ItemGun3
+  m_Name: DummyGun3
   m_TagString: ItemGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832225733080038849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.78, y: 0.69, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8285485318480928981}
@@ -72,13 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 3043462694855605742, guid: 76f644a47b2fa47d58999de805e745d4,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 444b8cf5efff2457c942731294a5ff14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.73333335, y: 0.53333336}
+  m_Size: {x: 0.88, y: 0.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,18 +96,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2878689, y: 0.11323103}
+  m_Offset: {x: -0.019177184, y: 0.042074353}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.1007524, y: 0.18630496}
-    oldSize: {x: 0.73333335, y: 0.36666667}
-    newSize: {x: 0.73333335, y: 0.53333336}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.88, y: 0.44}
+    newSize: {x: 0.88, y: 0.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7369601, y: 0.30175906}
+  m_Size: {x: 0.8363848, y: 0.44407243}
   m_EdgeRadius: 0
 --- !u!1001 &6876563866061359545
 PrefabInstance:
@@ -120,12 +119,12 @@ PrefabInstance:
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.109929085
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}

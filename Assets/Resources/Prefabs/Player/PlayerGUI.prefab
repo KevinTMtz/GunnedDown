@@ -358,7 +358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press M to continue...
+  m_Text: Press V to continue...
 --- !u!1 &1523556673
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     private HealthBar healthBar;
 
     private GameObject blood1;
+
+    private GameObject bloodHeal1;
     
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(health);
 
         blood1 = (GameObject) Resources.Load("Prefabs/Effects/BloodEffect1", typeof(GameObject));
+
+        bloodHeal1 = (GameObject) Resources.Load("Prefabs/Effects/HealEffect1", typeof(GameObject));
     }
 
     // Update is called once per frame
@@ -36,17 +40,30 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void decreaseHealth(int damage) {
-        if (!invinsible)
+        if (!invinsible) {
             if (health - damage < 0) {
                 health = 0;
             } else {
                 health -= damage;
             }
 
+            healthBar.SetHealth(health);
+            GameObject blood = Instantiate(blood1, transform.position, transform.rotation);
+            blood.transform.SetParent(transform);
+            SoundManager.PlaySound("Hurt");
+        }
+    }
+
+    public void IncreaseHealth(int heal) {
+        if (health + heal > 100) {
+            health = 100;
+        } else {
+            health += heal;
+        }
+
         healthBar.SetHealth(health);
-        GameObject blood = Instantiate(blood1, transform.position, transform.rotation);
+        GameObject blood = Instantiate(bloodHeal1, transform.position, transform.rotation);
         blood.transform.SetParent(transform);
-        SoundManager.PlaySound("Hurt");
     }
 
     void OnTriggerEnter2D(Collider2D other)

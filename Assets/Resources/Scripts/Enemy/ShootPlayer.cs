@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class ShootPlayer : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ShootPlayer : MonoBehaviour
     private GameObject bullet;
     private float bulletForce = 10f;
     private string path;
+    public string TypeOfBullet;
 
     private bool ableToShoot;
 
@@ -21,11 +23,11 @@ public class ShootPlayer : MonoBehaviour
     void Start()
     {
         ableToShoot = true;
-        
-        SelectBullet();
 
         // Get shootpoint transform and load bullet prefab
         shootPoint = transform.Find("Cannon");
+
+        path = "Prefabs/EnemyBullets/" + TypeOfBullet;
 
         bullet = (GameObject) Resources.Load(path, typeof(GameObject));
 
@@ -54,17 +56,9 @@ public class ShootPlayer : MonoBehaviour
 
     // Choose bullet depending on gun
     string SelectBullet() {
-        path = "Prefabs/EnemyBullets/Bullet ";
-        string gameObjectName = gameObject.name.Substring(0,6);
-
-        if (gameObjectName.Equals("Enemy1")) {
-            path += "1";
-        } else if (gameObjectName.Equals("Enemy3")) {
-            path += "2";
-        }
-
         return path;
     }
+
 
     // Move Aim Point
     void rotateCannon() {

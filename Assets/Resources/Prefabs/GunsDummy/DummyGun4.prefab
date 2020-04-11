@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 832225733080038855}
   - component: {fileID: 832225733080038848}
   m_Layer: 0
-  m_Name: ItemGun4
+  m_Name: DummyGun4
   m_TagString: ItemGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832225733080038849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.78, y: 0.69, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4216665847517613754}
@@ -72,13 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 3160096535552680323, guid: 76f644a47b2fa47d58999de805e745d4,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13128b9d46dfd416f8ca07be62dd5c9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.73333335, y: 0.53333336}
+  m_Size: {x: 0.39, y: 0.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,18 +96,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4415263, y: -0.0015156418}
+  m_Offset: {x: 0.005689442, y: 0.0033091009}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.17297558, y: 0.49208656}
-    oldSize: {x: 1.3, y: 0.43333334}
-    newSize: {x: 0.73333335, y: 0.53333336}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.56, y: 0.52}
+    newSize: {x: 0.39, y: 0.13}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2760189, y: 0.29419333}
+  m_Size: {x: 1.5558554, y: 0.52256566}
   m_EdgeRadius: 0
 --- !u!1001 &1662137946718201814
 PrefabInstance:
@@ -120,12 +119,12 @@ PrefabInstance:
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
@@ -135,17 +134,17 @@ PrefabInstance:
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3284675095269402988, guid: d70b34be98e834ccfa15cc917c5ac86b,
         type: 3}

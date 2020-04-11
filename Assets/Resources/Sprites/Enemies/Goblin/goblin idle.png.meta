@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 9c5f01acd86644e0c8a48660caea346b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4945684728018057118
+    second: goblin idle_0
+  - first:
+      213: 5263809477104834338
+    second: goblin idle_1
+  - first:
+      213: -625662700645757262
+    second: goblin idle_2
+  - first:
+      213: 2132046244418752174
+    second: goblin idle_3
+  - first:
+      213: 1472525266505479455
+    second: goblin idle_4
+  - first:
+      213: 6369127591924718609
+    second: goblin idle_5
+  - first:
+      213: 661309401829762365
+    second: goblin idle_6
+  - first:
+      213: 5424824433065409797
+    second: goblin idle_7
+  - first:
+      213: 4204452663893210252
+    second: goblin idle_8
+  - first:
+      213: -7700839971296398356
+    second: goblin idle_9
+  - first:
+      213: 2196882322347584063
+    second: goblin idle_10
+  - first:
+      213: -6567635668727977244
+    second: goblin idle_11
+  - first:
+      213: -2340513155106934195
+    second: goblin idle_12
+  - first:
+      213: -1095865944631069522
+    second: goblin idle_13
+  - first:
+      213: -5370044462321704030
+    second: goblin idle_14
+  - first:
+      213: -6999920795980892187
+    second: goblin idle_15
+  - first:
+      213: 9116282441205483276
+    second: goblin idle_16
+  - first:
+      213: -4256880975861789671
+    second: goblin idle_17
+  - first:
+      213: -8869697288638304539
+    second: goblin idle_18
+  - first:
+      213: -1664458368987123641
+    second: goblin idle_19
+  - first:
+      213: -658774706418853233
+    second: goblin idle_20
+  - first:
+      213: -116237137059482744
+    second: goblin idle_21
+  - first:
+      213: 963818364941057925
+    second: goblin idle_22
+  - first:
+      213: -5835152216973007924
+    second: goblin idle_23
+  - first:
+      213: -171420988339216758
+    second: goblin idle_24
+  - first:
+      213: -9036301667024202094
+    second: goblin idle_25
+  - first:
+      213: -5379007534344532970
+    second: goblin idle_26
+  - first:
+      213: 6217923794548214084
+    second: goblin idle_27
+  - first:
+      213: 1770950834964462107
+    second: goblin idle_28
+  - first:
+      213: -8783931144395579660
+    second: goblin idle_29
+  - first:
+      213: 8966746902662515601
+    second: goblin idle_30
+  - first:
+      213: -7970336597381857904
+    second: goblin idle_31
+  - first:
+      213: 7693171485092442655
+    second: goblin idle_32
+  - first:
+      213: 1524783268786617413
+    second: goblin idle_33
+  - first:
+      213: 2627030634234627554
+    second: goblin idle_34
+  - first:
+      213: -819649137611373449
+    second: goblin idle_35
+  - first:
+      213: -6458890214181358512
+    second: goblin idle_36
+  - first:
+      213: 8030667973333095088
+    second: goblin idle_37
+  - first:
+      213: 8925348937256092327
+    second: goblin idle_38
+  - first:
+      213: -1646449604308957668
+    second: goblin idle_39
+  - first:
+      213: -7150412274225756471
+    second: goblin idle_40
+  - first:
+      213: -8660906020176844038
+    second: goblin idle_41
+  - first:
+      213: 8992040349234216817
+    second: goblin idle_42
+  - first:
+      213: 7367431206656427525
+    second: goblin idle_43
+  - first:
+      213: -9078491969560715399
+    second: goblin idle_44
+  - first:
+      213: 7685389287957306146
+    second: goblin idle_45
+  - first:
+      213: 6835521588817342968
+    second: goblin idle_46
+  - first:
+      213: 637783673841797857
+    second: goblin idle_47
+  - first:
+      213: -329797386227774085
+    second: goblin idle_48
+  - first:
+      213: -8582401861340259596
+    second: goblin idle_49
+  - first:
+      213: 2594787943960342853
+    second: goblin idle_50
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: goblin idle_0
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 107
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268c86771f56d5bb0800000000000000
+      internalID: -4945684728018057118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goblin idle_1
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 107
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2271b20a4decc0940800000000000000
+      internalID: 5263809477104834338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goblin idle_2
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 107
+        width: 250
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be4cc2b6133157f0800000000000000
+      internalID: -625662700645757262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

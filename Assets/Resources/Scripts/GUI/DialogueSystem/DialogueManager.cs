@@ -28,9 +28,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.M) && isActive && !isWriting) {
+        if (Input.GetKeyDown(KeyCode.V) && isActive && !isWriting) {
             DisplayNextSentence();
-        } else if (Input.GetKeyDown(KeyCode.M) && isActive && isWriting) {
+        } else if (Input.GetKeyDown(KeyCode.V) && isActive && isWriting) {
             isWritingStop = true;
         }
     }

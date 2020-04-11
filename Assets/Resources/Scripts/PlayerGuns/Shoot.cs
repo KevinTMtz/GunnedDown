@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class Shoot : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class Shoot : MonoBehaviour
 
     // Choose bullet depending on gun
     string SelectBullet() {
-        path = "Prefabs/Bullets/Bullet" + gameObject.name.Substring(3,1);
+        path = "Prefabs/Bullets/Bullet" + Regex.Replace(gameObject.name, "[^.0-9]", "");
         return path;
     }
 

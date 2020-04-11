@@ -8,6 +8,8 @@ public class FollowPlayer : MonoBehaviour
     private Transform target;
 
     private SpriteRenderer spriteRenderer;
+
+    private bool facingRight;
     
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,8 @@ public class FollowPlayer : MonoBehaviour
         target = GameObject.Find("Player").GetComponent<Transform>();
         
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        facingRight = true;
     }
 
     // Update is called once per frame
@@ -29,11 +33,16 @@ public class FollowPlayer : MonoBehaviour
     }
 
     void flipEnemySprite() {
-        if (90 > Mathf.Abs(getAngleRelToPlayer())) {
-            spriteRenderer.flipX = true;
-        } else {
-            spriteRenderer.flipX = false;
+        if (90 > Mathf.Abs(getAngleRelToPlayer()) && facingRight == false) {
+            Flip();
+        } else if (90 < Mathf.Abs(getAngleRelToPlayer()) && facingRight == true) {
+            Flip();
         }
+    }
+
+    void Flip() {
+        facingRight = !facingRight;
+        transform.Rotate(0f,180f,0f);
     }
 
     float getAngleRelToPlayer() {

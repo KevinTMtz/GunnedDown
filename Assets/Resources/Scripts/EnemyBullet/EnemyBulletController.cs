@@ -11,7 +11,7 @@ public class EnemyBulletController : MonoBehaviour {
     void Start() {
         Destroy(gameObject, 4f);
         
-        playerHealth = GameObject.Find("Player").GetComponent("PlayerHealth") as PlayerHealth;
+        playerHealth = FindObjectOfType<PlayerHealth>();
         
         explosion = (GameObject) Resources.Load("Prefabs/Effects/BulletExplosionEffect1", typeof(GameObject));
     }

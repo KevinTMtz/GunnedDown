@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class GunsInventory : MonoBehaviour
 {
@@ -69,14 +70,13 @@ public class GunsInventory : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("ItemGun")) {
-            string path = "Prefabs/Guns/Gun" + other.gameObject.name.Substring(8);
+            string path = "Prefabs/Guns/Gun" + Regex.Replace(other.gameObject.name, "[^.0-9]", "");
             pickedGun = (GameObject) Resources.Load(path, typeof(GameObject));
             
             if (gunsInInventory.Count > 0)
                 gunsInInventory[activeWeapon].SetActive(false);
             
-            Instantiate(pickedGun, transform.position, Quaternion.identity);
-            gunsInInventory.Add(GameObject.Find("Gun"+other.gameObject.name.Substring(8)+"(Clone)"));
+            gunsInInventory.Add(Instantiate(pickedGun, transform.position, Quaternion.identity));
 
             activeWeapon = gunsInInventory.Count - 1;
 
