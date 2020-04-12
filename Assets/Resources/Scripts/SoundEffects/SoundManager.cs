@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath;
     static AudioSource audioSrc;
 
     public static SoundManager instance;
@@ -48,13 +48,17 @@ public class SoundManager : MonoBehaviour
         sound6 = Resources.Load<AudioClip>("Sounds/Explosions/explodemini");
         sound8 = Resources.Load<AudioClip>("Sounds/Mix/metal_slide");
         
-        // Boss 1 sounds
-        sound9 = Resources.Load<AudioClip>("Sounds/Boss/Dragon_roar");
-        sound10 = Resources.Load<AudioClip>("Sounds/Boss/DragonWings");
-        sound11 = Resources.Load<AudioClip>("Sounds/Boss/fireball");
-        sound12 = Resources.Load<AudioClip>("Sounds/Boss/Blitz");
-        sound13 = Resources.Load<AudioClip>("Sounds/Boss/Burst");
-        sound14 = Resources.Load<AudioClip>("Sounds/Boss/Dragon_growl");
+        // Minotaur Enemy
+        minotaur = Resources.Load<AudioClip>("Sounds/Enemies/Minotaur/Minotaur");
+        minotaurBreath = Resources.Load<AudioClip>("Sounds/Enemies/Minotaur/MinotaurBreath");
+
+        // Boss 1 Dragon
+        sound9 = Resources.Load<AudioClip>("Sounds/Enemies/DragonBoss/Dragon_roar");
+        sound10 = Resources.Load<AudioClip>("Sounds/Enemies/DragonBoss/DragonWings");
+        sound11 = Resources.Load<AudioClip>("Sounds/Enemies/DragonBoss/fireball");
+        sound12 = Resources.Load<AudioClip>("Sounds/Enemies/DragonBoss/Blitz");
+        sound13 = Resources.Load<AudioClip>("Sounds/Enemies/DragonBoss/Burst");
+        sound14 = Resources.Load<AudioClip>("Sounds/Enemies/DragonBoss/Dragon_growl");
 
         // Traps sounds
         spikes = Resources.Load<AudioClip>("Sounds/Traps/spikes");
@@ -109,26 +113,34 @@ public class SoundManager : MonoBehaviour
                 audioSrc.PlayOneShot(hurt, 1f);
                 break;
 
-            case"ClothInventory":
+            case "ClothInventory":
                 audioSrc.PlayOneShot(sound1, 0.5f);
                 break;
-            case"LeatherInventory":
+            case "LeatherInventory":
                 audioSrc.PlayOneShot(sound2, 0.35f);
                 break;
-            case"ShotgunLoad":
+            case "ShotgunLoad":
                 audioSrc.PlayOneShot(sound3, 0.35f);
                 break;
-            case"Shoot2":
+            case "Shoot2":
                 audioSrc.PlayOneShot(sound4, 0.20f);
                 break;
-            case"Steps":
+            case "Steps":
                 audioSrc.PlayOneShot(sound5, 0.5f);
                 break;
-            case"Explosion":
+            case "Explosion":
                 audioSrc.PlayOneShot(sound6, 0.15f);
                 break;
-            case"MetalSlide":
+            case "MetalSlide":
                 audioSrc.PlayOneShot(sound8, 1f);
+                break;
+
+            // Enemy Minotaur
+            case "Minotaur":
+                audioSrc.PlayOneShot(minotaur, 0.75f);
+                break;
+            case "MinotaurBreath":
+                audioSrc.PlayOneShot(minotaurBreath, 0.75f);
                 break;
             
             // Boss 1
