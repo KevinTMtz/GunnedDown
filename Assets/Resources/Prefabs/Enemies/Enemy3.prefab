@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 4359044852368807837}
   - component: {fileID: 4359044852368807834}
   - component: {fileID: 4359044852368807835}
+  - component: {fileID: 8557543509327413581}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Enemy
@@ -201,7 +202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c1c097302d54499b4013ba755d3c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
   TypeOfBullet: Bullet2
+  waitToShoot: 1.6
 --- !u!114 &4359044852368807835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +218,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+--- !u!114 &8557543509327413581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359044852368807838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b23e333c4cd245f0a5845eca71ec7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4359044852971078953
 GameObject:
   m_ObjectHideFlags: 0

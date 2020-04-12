@@ -7,12 +7,14 @@ public class ShootPlayer : MonoBehaviour
 {
     // Bullet
     private Transform shootPoint;
-    private GameObject bullet;
+    public GameObject bullet;
     private float bulletForce = 10f;
     private string path;
     public string TypeOfBullet;
 
     private bool ableToShoot;
+
+    public float waitToShoot;
 
     // Cannon Rotation
     private float aimAngle;
@@ -46,7 +48,7 @@ public class ShootPlayer : MonoBehaviour
     }
 
     IEnumerator ShootBullet() {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(waitToShoot);
         GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
         bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);

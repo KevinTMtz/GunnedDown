@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5846803788453403053}
   - component: {fileID: 3008098016996168401}
   m_Layer: 0
-  m_Name: Bullet 2
+  m_Name: Bullet2
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ PrefabInstance:
     - target: {fileID: 3642365722370220211, guid: a3f698c212c1b4710940f8d5f9719f3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.129
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642365722370220211, guid: a3f698c212c1b4710940f8d5f9719f3b,
         type: 3}
