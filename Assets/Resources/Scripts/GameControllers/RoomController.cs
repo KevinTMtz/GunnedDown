@@ -68,7 +68,7 @@ public class RoomController : MonoBehaviour
             }
             
             // Stop script runnning
-            enabled = false;
+            Destroy(gameObject);
         }
     }
 

@@ -65,10 +65,4 @@ public class PlayerHealth : MonoBehaviour
         GameObject blood = Instantiate(bloodHeal1, transform.position, transform.rotation);
         blood.transform.SetParent(transform);
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag.Equals("Enemy"))
-            decreaseHealth(5);
-    }
 }

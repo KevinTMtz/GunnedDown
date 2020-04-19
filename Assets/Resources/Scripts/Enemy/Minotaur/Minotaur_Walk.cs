@@ -32,7 +32,7 @@ public class Minotaur_Walk : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
-        if (rb.position == target || Mathf.Abs(oldTime - Time.time) > 5) {
+        if (rb.position == target || Mathf.Abs(oldTime - Time.time) > 3) {
             animator.SetBool("Attacking", true);
         }
     }

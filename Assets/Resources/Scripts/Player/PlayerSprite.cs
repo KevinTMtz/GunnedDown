@@ -6,6 +6,7 @@ public class PlayerSprite : MonoBehaviour
 {
     private PlayerAim playerAim;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
     private float aimAngle;
 
     // Sprites
@@ -20,11 +21,13 @@ public class PlayerSprite : MonoBehaviour
         // To get the spriterenderer of the player
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
+        animator = GetComponent<Animator>();
+
         loadPlayerSprites();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         updateSpriteInRotation();
     }
@@ -32,42 +35,42 @@ public class PlayerSprite : MonoBehaviour
     // Change sprite depending of where the player aims
     void updateSpriteInRotation() {
         aimAngle = playerAim.AngleOfAim;
-        GetComponent<Animator>().ResetTrigger("up");
-        GetComponent<Animator>().ResetTrigger("up-right");
-        GetComponent<Animator>().ResetTrigger("up-left");
-        GetComponent<Animator>().ResetTrigger("down");
-        GetComponent<Animator>().ResetTrigger("down-right");
-        GetComponent<Animator>().ResetTrigger("down-left");
+        animator.ResetTrigger("up");
+        animator.ResetTrigger("up-right");
+        animator.ResetTrigger("up-left");
+        animator.ResetTrigger("down");
+        animator.ResetTrigger("down-right");
+        animator.ResetTrigger("down-left");
 
         if (22.5f > Mathf.Abs(aimAngle)) {
-            spriteRenderer.sprite = playerSprites[0];
-            GetComponent<Animator>().SetTrigger("down-right");
+            //spriteRenderer.sprite = playerSprites[0];
+            animator.SetTrigger("down-right");
         } else if (157.5f < Mathf.Abs(aimAngle)) {
-            spriteRenderer.sprite = playerSprites[4];
-            GetComponent<Animator>().SetTrigger("down-left");
+            //spriteRenderer.sprite = playerSprites[4];
+            animator.SetTrigger("down-left");
         } else if (22.5f < aimAngle && aimAngle < 67.5f) {
-            spriteRenderer.sprite = playerSprites[1];
-            GetComponent<Animator>().SetTrigger("up-right");
+            //spriteRenderer.sprite = playerSprites[1];
+            animator.SetTrigger("up-right");
         }
         else if (67.5f < aimAngle && aimAngle < 112.5f) {
-            spriteRenderer.sprite = playerSprites[2];
-            GetComponent<Animator>().SetTrigger("up");
+            //spriteRenderer.sprite = playerSprites[2];
+            animator.SetTrigger("up");
         }
         else if (112.5f < aimAngle && aimAngle < 157.5f) {
-            spriteRenderer.sprite = playerSprites[3];
-            GetComponent<Animator>().SetTrigger("up-left");
+            //spriteRenderer.sprite = playerSprites[3];
+            animator.SetTrigger("up-left");
 
         } else if (-22.5f > aimAngle && aimAngle > -67.5f) {
-            spriteRenderer.sprite = playerSprites[0];
-            GetComponent<Animator>().SetTrigger("down-right");
+            //spriteRenderer.sprite = playerSprites[0];
+            animator.SetTrigger("down-right");
         }
         else if (-67.5f > aimAngle && aimAngle > -112.5f) {
-            spriteRenderer.sprite = playerSprites[5];
-            GetComponent<Animator>().SetTrigger("down");
+            //spriteRenderer.sprite = playerSprites[5];
+            animator.SetTrigger("down");
         }
         else if (-112.5f > aimAngle && aimAngle > -157.5f) {
-            spriteRenderer.sprite = playerSprites[4];
-            GetComponent<Animator>().SetTrigger("down-left");
+            //spriteRenderer.sprite = playerSprites[4];
+            animator.SetTrigger("down-left");
         }
     }
 
