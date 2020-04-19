@@ -34,5 +34,7 @@ public class PlayerMovement : MonoBehaviour
         movementSpeed = new Vector3(speedX, speedY, 0f);
         //transform.position = transform.position + movementSpeed;
         gameObject.GetComponent<Rigidbody2D>().velocity = movementSpeed;
+        if (speedX != 0 || speedY != 0) gameObject.GetComponent<Animator>().SetBool("isMoving", true);
+        else gameObject.GetComponent<Animator>().SetBool("isMoving", false);
     }
 }

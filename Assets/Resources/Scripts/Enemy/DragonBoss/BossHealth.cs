@@ -8,11 +8,12 @@ public class BossHealth: MonoBehaviour
     private bool invulnerable;
     public Animator animator;
     private bool roar1, roar2;
+    private int originalHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 500;
+        originalHealth = health;
         invulnerable = false;
         roar1 = true; 
         roar2 = true;
@@ -36,7 +37,7 @@ public class BossHealth: MonoBehaviour
             //Die aniamtion
             animator.SetTrigger("Death");
         }
-        else if (health <= 100)
+        else if (health <= originalHealth*.2f)
         {
             if (roar2)
             {
@@ -49,7 +50,7 @@ public class BossHealth: MonoBehaviour
             animator.SetBool("Blitzing", false);
             
         }
-        else if (health <= 300)
+        else if (health <= originalHealth*0.6f)
         {
             if (roar1)
             {

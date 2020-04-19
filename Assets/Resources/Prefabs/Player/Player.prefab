@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 790152316514780866}
   - component: {fileID: 1128272847614015153}
   - component: {fileID: 598789982}
+  - component: {fileID: 7246535401613805390}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -262,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d38f84a80064b18931054e03d90c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invinsible: 0
 --- !u!114 &1128272847614015153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +288,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e58ef89d77d48c19913304b6107082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7246535401613805390
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845101602360083655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2dd28856d906a3f46946c2a314f6c12e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7845101602643337225
 GameObject:
   m_ObjectHideFlags: 0
