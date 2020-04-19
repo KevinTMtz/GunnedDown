@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   TypeOfBullet: Bullet1
-  waitToShoot: 2
+  waitToShoot: 3
 --- !u!114 &3762720133106609862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d759eacb66442e79eec583d30cdf85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 30
 --- !u!114 &3026926562958635030
 MonoBehaviour:
   m_ObjectHideFlags: 0

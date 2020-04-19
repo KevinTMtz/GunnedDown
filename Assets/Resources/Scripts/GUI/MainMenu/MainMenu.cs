@@ -15,8 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevel1() {
         PlayMenuSound();
-        //SceneManager.LoadScene("Level1");
-        Debug.LogWarning("Scene for Level 1 does not exist");
+        SceneManager.LoadScene("Level1");
     }
     
     public void PlayLevel2() {
