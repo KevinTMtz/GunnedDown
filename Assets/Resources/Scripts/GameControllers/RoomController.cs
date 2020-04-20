@@ -67,7 +67,6 @@ public class RoomController : MonoBehaviour
                 FindObjectOfType<SoundManager>().StopPlaying(fightMusic);
             }
             
-            // Stop script runnning
             Destroy(gameObject);
         }
     }

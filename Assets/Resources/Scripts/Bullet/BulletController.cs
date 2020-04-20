@@ -36,4 +36,8 @@ public class BulletController : MonoBehaviour {
             SoundManager.PlaySound("Explosion");
         }
     }
+
+    public int Damage {
+        get { return damage; }
+    }
 }

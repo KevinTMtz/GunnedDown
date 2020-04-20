@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak;
     static AudioSource audioSrc;
 
     public static SoundManager instance;
@@ -38,6 +38,10 @@ public class SoundManager : MonoBehaviour
     {
         // Player
         hurt = Resources.Load<AudioClip>("Sounds/Mix/hurt");
+
+        // Break
+        ceramicBreak = Resources.Load<AudioClip>("Sounds/Mix/JarBreak");
+        woodBreak = Resources.Load<AudioClip>("Sounds/Mix/WoodBreak");
         
         // TODO: Rename sounds and order them
         sound1 = Resources.Load<AudioClip>("Sounds/Inventory/cloth-inventory");
@@ -112,7 +116,6 @@ public class SoundManager : MonoBehaviour
             case "Hurt":
                 audioSrc.PlayOneShot(hurt, 1f);
                 break;
-
             case "ClothInventory":
                 audioSrc.PlayOneShot(sound1, 0.5f);
                 break;
@@ -128,6 +131,16 @@ public class SoundManager : MonoBehaviour
             case "Steps":
                 audioSrc.PlayOneShot(sound5, 0.5f);
                 break;
+
+            // Break
+            case "CeramicBreak":
+                audioSrc.PlayOneShot(ceramicBreak, 0.75f);
+                break;
+            case "WoodBreak":
+                audioSrc.PlayOneShot(woodBreak, 0.75f);
+                break;
+
+
             case "Explosion":
                 audioSrc.PlayOneShot(sound6, 0.15f);
                 break;
