@@ -27,7 +27,7 @@ public class BulletController : MonoBehaviour {
             bossHealth.TakeDamage(damage);
         }
         
-        bool check = (!other.tag.Equals("Player") && !other.tag.Equals("PlayerChild") && !other.tag.Equals("Bullet") && !other.tag.Equals("Hole"));
+        bool check = (!other.tag.Equals("Player") && !other.tag.Equals("PlayerChild") && !other.tag.Equals("Bullet") && !other.tag.Equals("Hole") && !other.tag.Equals("EnemyBullet") );
         if (check) {
             Destroy(gameObject);
 

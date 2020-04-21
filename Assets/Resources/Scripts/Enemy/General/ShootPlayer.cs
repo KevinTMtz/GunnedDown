@@ -14,6 +14,8 @@ public class ShootPlayer : MonoBehaviour
 
     private bool ableToShoot;
 
+    public bool shootFromAnimator;
+    
     public float waitToShoot;
 
     // Cannon Rotation
@@ -39,15 +41,15 @@ public class ShootPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ableToShoot) { 
-            StartCoroutine(ShootBullet());
+        if (ableToShoot && !shootFromAnimator) { 
+            StartCoroutine(ShootBulletCoroutine());
             ableToShoot = false;
         }
         
         rotateCannon();
     }
 
-    IEnumerator ShootBullet() {
+    IEnumerator ShootBulletCoroutine() {
         yield return new WaitForSeconds(waitToShoot);
         GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
@@ -56,11 +58,11 @@ public class ShootPlayer : MonoBehaviour
         ableToShoot = true;
     }
 
-    // Choose bullet depending on gun
-    string SelectBullet() {
-        return path;
+    void ShootBullet() {
+        GameObject bulletInstantiated = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+        Rigidbody2D bulletRB = bulletInstantiated.GetComponent<Rigidbody2D>();
+        bulletRB.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
     }
-
 
     // Move Aim Point
     void rotateCannon() {
@@ -74,6 +76,6 @@ public class ShootPlayer : MonoBehaviour
     }
 
     public string bulletPath {
-        get { return SelectBullet(); }
+        get { return path; }
     }
 }
