@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver;
     static AudioSource audioSrc;
 
     public static SoundManager instance;
@@ -51,6 +51,7 @@ public class SoundManager : MonoBehaviour
         sound5 = Resources.Load<AudioClip>("Sounds/Movement/wood02");
         sound6 = Resources.Load<AudioClip>("Sounds/Explosions/explodemini");
         sound8 = Resources.Load<AudioClip>("Sounds/Mix/metal_slide");
+        gameOver = Resources.Load<AudioClip>("Sounds/Mix/gameOver");
         
         // Minotaur Enemy
         minotaur = Resources.Load<AudioClip>("Sounds/Enemies/Minotaur/Minotaur");
@@ -192,6 +193,10 @@ public class SoundManager : MonoBehaviour
                 break;
             case "MenuSound":
                 audioSrc.PlayOneShot(sound7, 1f);
+                break;
+            
+            case "GameOver":
+                audioSrc.PlayOneShot(gameOver, 1f);
                 break;
         }
     }

@@ -16,11 +16,17 @@ public class DoorController : MonoBehaviour
     public bool inChild;
     public Animator animatorChild1;
     public Animator animatorChild2;
+
+    private AudioSource audioSrc;
+
+    public AudioClip audioClip;
     
     private void Start() {
         isOpen = false;
         
         player = GameObject.Find("Player").GetComponent<Transform>();
+
+        audioSrc = GetComponent<AudioSource>();
     }
     
     private void Update() {
@@ -46,24 +52,24 @@ public class DoorController : MonoBehaviour
     }
     
     private void Open() {
-        SoundManager.PlaySound("MetalSlide");
+        PlayDoorSound();
         animator.SetBool("isOpen", true);
     }
     
     private void Close() {
-        SoundManager.PlaySound("MetalSlide");
+        PlayDoorSound();
         animator.SetBool("isOpen", false);
     }
 
     private void OpenChilds() {
-        SoundManager.PlaySound("MetalSlide");
+        PlayDoorSound();
         animatorChild1.SetBool("isOpen", true);
         animatorChild2.SetBool("isOpen", true);
         GetComponent<BoxCollider2D>().enabled = false;
     }
     
     private void CloseChilds() {
-        SoundManager.PlaySound("MetalSlide");
+        PlayDoorSound();
         animatorChild1.SetBool("isOpen", false);
         animatorChild2.SetBool("isOpen", false);
         GetComponent<BoxCollider2D>().enabled = true;
@@ -72,5 +78,9 @@ public class DoorController : MonoBehaviour
     public bool ObjectiveCompleted {
         get { return objectiveCompleted; }
         set { objectiveCompleted = value; }
+    }
+
+    private void PlayDoorSound() {
+        audioSrc.PlayOneShot(audioClip, 1f);
     }
 }

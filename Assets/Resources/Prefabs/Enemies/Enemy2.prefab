@@ -431,6 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad72b5363d044ade9cbc613c0286f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAnimation: 0
+  hitAnimation: 1
   damage: 10
   distance: 1.5

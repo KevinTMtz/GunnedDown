@@ -11,10 +11,13 @@ public class PlayerGUI : MonoBehaviour
     public GameObject inventoryMenu;
     public GameObject pauseMenu;
     public GameObject dialogueMenu;
+    public GameObject gameOverMenu;
 
     private Scene activeScene;
 
     private DialogueManager dialogueManager;
+
+    private PlayerHealth playerHealth;
     
     void Start() {
         Time.timeScale = 1;
@@ -23,6 +26,8 @@ public class PlayerGUI : MonoBehaviour
         activeScene = SceneManager.GetActiveScene();
 
         dialogueManager = FindObjectOfType<DialogueManager>();
+
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
     
     // Update is called once per frame
@@ -30,11 +35,20 @@ public class PlayerGUI : MonoBehaviour
     {
         bool dialogueCheck = dialogueManager.DialoguePanelIsActive;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && !dialogueCheck)
+        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && !dialogueCheck && !playerHealth.IsKill)
             ShowPauseMenu();
 
-        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && !dialogueCheck)
+        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && !dialogueCheck && !playerHealth.IsKill)
             ShowInventory();
+
+        if (playerHealth.IsKill && Time.timeScale != 0) {
+            Time.timeScale = 0;
+            pauseMenuBackground.SetActive(true);
+            Cursor.visible = true;
+            gameOverMenu.SetActive(true);
+            FindObjectOfType<SoundManager>().StopAllSongs();
+            SoundManager.PlaySound("GameOver");
+        }
     }
 
     public void ShowPauseMenu() {

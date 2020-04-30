@@ -24,13 +24,23 @@ public class PunchPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) < distance && !isAttacking && hitAnimation) {
+        if (hitAnimation)
+            HitPlayerWithAnimation();
+    }
+
+    void HitPlayerWithAnimation() {
+        if (Vector2.Distance(transform.position, player.position) < distance && !isAttacking) {
             isAttacking = true;
             animator.SetBool("Attacking", true);
-        } else if (Vector2.Distance(transform.position, player.position) > distance && isAttacking && hitAnimation) {
+        } else if (Vector2.Distance(transform.position, player.position) > distance && isAttacking) {
             isAttacking = false;
             animator.SetBool("Attacking", false);
         }
+    }
+
+    void HitPlayerWithOutAnimation() {
+        if (Vector2.Distance(transform.position, player.position) < distance)
+            HitPlayer();
     }
 
     void HitPlayer() {

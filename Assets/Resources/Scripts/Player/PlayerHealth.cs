@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {   
@@ -34,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {   
         if (health == 0 && !isKill) {
-            Debug.Log("You died!!!");
+            //Debug.Log("You died!!!");
             isKill = true;
         }
     }
@@ -64,5 +65,9 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetHealth(health);
         GameObject blood = Instantiate(bloodHeal1, transform.position, transform.rotation);
         blood.transform.SetParent(transform);
+    }
+
+    public bool IsKill {
+        get { return isKill; }
     }
 }
