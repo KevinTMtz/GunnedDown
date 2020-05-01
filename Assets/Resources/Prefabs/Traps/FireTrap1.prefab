@@ -217,4 +217,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 0.5
   durationTime: 0.56
-  damage: 10
+  damage: 15

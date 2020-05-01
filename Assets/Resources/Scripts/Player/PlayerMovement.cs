@@ -8,11 +8,15 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementSpeed;
     private float speedX;
     private float speedY;
+
+    public GameObject dust;
+    private bool canDust;
     
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating ("PlaySound", 0.0f, Random.Range(0.25f, 0.45f));
+        canDust = true;
     }
 
     // Update is called once per frame
@@ -32,9 +36,21 @@ public class PlayerMovement : MonoBehaviour
         speedX = Input.GetAxis("Horizontal") * movementFactor;
         speedY = Input.GetAxis("Vertical") * movementFactor;
         movementSpeed = new Vector3(speedX, speedY, 0f);
+
+        if (movementSpeed.magnitude > 0 && canDust)
+            StartCoroutine(WaitToDust());
+
         //transform.position = transform.position + movementSpeed;
         gameObject.GetComponent<Rigidbody2D>().velocity = movementSpeed;
         if (speedX != 0 || speedY != 0) gameObject.GetComponent<Animator>().SetBool("isMoving", true);
         else gameObject.GetComponent<Animator>().SetBool("isMoving", false);
+    }
+
+    private IEnumerator WaitToDust () {
+        canDust = !canDust;
+        yield return new WaitForSeconds(Random.Range(0.15f, 0.25f));
+        canDust = !canDust;
+        if (movementSpeed.magnitude > 0)
+            Instantiate(dust, transform.Find("Shadow").transform.position, Quaternion.identity);
     }
 }

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 0.5
   durationTime: 0.5
-  damage: 5
+  damage: 10
 --- !u!61 &3103540255137630848
 BoxCollider2D:
   m_ObjectHideFlags: 0
