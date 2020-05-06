@@ -63,15 +63,19 @@ public class DoorController : MonoBehaviour
 
     private void OpenChilds() {
         PlayDoorSound();
-        animatorChild1.SetBool("isOpen", true);
-        animatorChild2.SetBool("isOpen", true);
+        if (animatorChild1.gameObject.activeSelf)
+            animatorChild1.SetBool("isOpen", true);
+        if (animatorChild2.gameObject.activeSelf)
+            animatorChild2.SetBool("isOpen", true);
         GetComponent<BoxCollider2D>().enabled = false;
     }
     
     private void CloseChilds() {
         PlayDoorSound();
-        animatorChild1.SetBool("isOpen", false);
-        animatorChild2.SetBool("isOpen", false);
+        if (animatorChild1.gameObject.activeSelf)
+            animatorChild1.SetBool("isOpen", false);
+        if (animatorChild2.gameObject.activeSelf)
+            animatorChild2.SetBool("isOpen", false);
         GetComponent<BoxCollider2D>().enabled = true;
     }
 
