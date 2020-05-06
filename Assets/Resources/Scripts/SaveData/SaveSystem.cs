@@ -11,12 +11,14 @@ public static class SaveSystem {
         
         string path = Application.persistentDataPath + $"/GunnedDownData{activeSaveSlot}.save";
 
-        FileStream stream = new FileStream(path, FileMode.Create);
+        GameData gameData = LoadGameData(activeSaveSlot);
 
-        GameData data = new GameData();
-
-        formatter.Serialize(stream, data);
-        stream.Close();
+        if (gameData == null || gameData.level < ActiveLevelForSaving) {
+            FileStream stream = new FileStream(path, FileMode.Create);
+            GameData data = new GameData();
+            formatter.Serialize(stream, data);
+            stream.Close();
+        }
     }
 
     public static GameData LoadGameData(int slotToLoad) {
@@ -37,6 +39,20 @@ public static class SaveSystem {
 
     public static void DeleteFile (int slotToDelete) {
         File.Delete(Application.persistentDataPath + $"/GunnedDownData{slotToDelete}.save");
+    }
+
+    public static int ActiveLevelForSaving {
+        get { 
+            int temp = 0;
+            if (activeLevel == 0)
+                temp = 1;
+            else if (activeLevel == 1)
+                temp = 2;
+            else if (activeLevel == 2 || activeLevel == 3)
+                temp = 3;
+            
+            return temp;
+        }
     }
 
     public static int ActiveLevel { 
