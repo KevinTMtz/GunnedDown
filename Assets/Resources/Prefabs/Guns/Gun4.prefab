@@ -192,3 +192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootWaitTime: 0.25
+  cartridgeSize: 10
+  ammobagSize: 200
+  reloadTime: 0.75

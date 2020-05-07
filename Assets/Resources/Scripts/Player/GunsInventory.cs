@@ -15,6 +15,8 @@ public class GunsInventory : MonoBehaviour
 
     // For the interface
     private Image gunImage;
+    private GameObject cartridgePanel;
+    private GameObject ammoBagPanel;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,9 @@ public class GunsInventory : MonoBehaviour
         hand = GameObject.Find("Hand").GetComponent<Transform>();
 
         gunImage = GameObject.Find("GunImage").GetComponent<Image>();
+
+        cartridgePanel = GameObject.Find("CartridgePanel").transform.Find("Image").gameObject;
+        ammoBagPanel = GameObject.Find("AmmoBagPanel").transform.Find("Image").gameObject;
     }
 
     // Update is called once per frame
@@ -50,6 +55,7 @@ public class GunsInventory : MonoBehaviour
     }
 
     void ChangeWeapon(int delta) {
+        gunsInInventory[activeWeapon].GetComponent<Shoot>().Reloading = false;
         gunsInInventory[activeWeapon].SetActive(false);
         
         if (activeWeapon == 0 && delta < 0)
@@ -63,7 +69,8 @@ public class GunsInventory : MonoBehaviour
         gunsInInventory[activeWeapon].GetComponent<Shoot>().RestartValues();
         gunsInInventory[activeWeapon].SetActive(true);
 
-        ChangeSpriteInInterface();
+        UpdateGUI();
+        gunsInInventory[activeWeapon].GetComponent<Shoot>().UpdateGUI();
 
         SoundManager.PlaySound("ShotgunLoad");
     }
@@ -80,16 +87,24 @@ public class GunsInventory : MonoBehaviour
 
             activeWeapon = gunsInInventory.Count - 1;
 
-            ChangeSpriteInInterface();
-            
             Destroy(other.gameObject);
+            
+            UpdateGUI();
+            ammoBagPanel.SetActive(true);
+            cartridgePanel.SetActive(true);
 
             SoundManager.PlaySound("LeatherInventory");
         }
     }
 
-    private void ChangeSpriteInInterface() {
+    private void UpdateGUI() {
         gunImage.sprite = gunsInInventory[activeWeapon].transform.Find("Gun").GetComponent<SpriteRenderer>().sprite;
         gunImage.color = new Color(gunImage.color.r, gunImage.color.g, gunImage.color.b, 1f);
+    }
+
+    public GameObject GetActiveWeapon() {
+        if (gunsInInventory.Count > 0)
+            return gunsInInventory[activeWeapon];
+        return null;
     }
 }
