@@ -10,6 +10,7 @@ public class InventorySlot : MonoBehaviour
     public void AddItem (GameObject newItem) {
         item = newItem;
         icon.sprite = newItem.GetComponent<SpriteRenderer>().sprite;
+        icon.color = newItem.GetComponent<SpriteRenderer>().color;
         icon.enabled = true;
     }
 
