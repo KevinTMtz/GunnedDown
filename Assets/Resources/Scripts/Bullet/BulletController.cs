@@ -26,8 +26,12 @@ public class BulletController : MonoBehaviour {
             BossHealth bossHealth = other.GetComponent<BossHealth>();
             bossHealth.TakeDamage(damage);
         }
-        
-        bool check = (!other.tag.Equals("Player") && !other.tag.Equals("PlayerChild") && !other.tag.Equals("Bullet") && !other.tag.Equals("Hole") && !other.tag.Equals("EnemyBullet") );
+        if (other.tag.Equals("Hydra"))
+        {
+            HydraHealth bossHealth = other.GetComponent<HydraHealth>();
+            bossHealth.TakeDamage(damage);
+        }
+        bool check = (!other.tag.Equals("Player") && !other.tag.Equals("PlayerChild") && !other.tag.Equals("Bullet") && !other.tag.Equals("Hole") && !other.tag.Equals("EnemyBullet") &&!other.tag.Equals("Ignore"));
         if (check) {
             Destroy(gameObject);
 

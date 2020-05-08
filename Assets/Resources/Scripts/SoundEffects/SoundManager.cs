@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig;
     static AudioSource audioSrc;
 
     public static SoundManager instance;
@@ -75,6 +75,13 @@ public class SoundManager : MonoBehaviour
         // GUI
         sound7 = Resources.Load<AudioClip>("Sounds/Menu/positive");
         typing = Resources.Load<AudioClip>("Sounds/Mix/typing");
+
+        //Boss 2 Hydra
+        hydraLament = Resources.Load<AudioClip>("Sounds/Enemies/HydraBoss/Hydra Lament");
+        hydraObstacle = Resources.Load<AudioClip>("Sounds/Enemies/HydraBoss/Obstacle");
+        hydraDig = Resources.Load<AudioClip>("Sounds/Enemies/HydraBoss/Hydra_dig");
+        hydraBullet = Resources.Load<AudioClip>("Sounds/Enemies/HydraBoss/HydraBullet");
+        stickyBullet = Resources.Load<AudioClip>("Sounds/Enemies/HydraBoss/StickyBullet");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -197,6 +204,27 @@ public class SoundManager : MonoBehaviour
             
             case "GameOver":
                 audioSrc.PlayOneShot(gameOver, 1f);
+                break;
+
+            // Hydra
+            case "HydraLament":
+                audioSrc.PlayOneShot(hydraLament, 2f);
+                break;
+
+            case "StickyBullet":
+                audioSrc.PlayOneShot(stickyBullet, 0.5f);
+                break;
+
+            case "HydraBullet":
+                audioSrc.PlayOneShot(hydraBullet, 0.75f);
+                break;
+
+            case "Obstacle":
+                audioSrc.PlayOneShot(hydraObstacle, 0.125f);
+                break;
+
+            case "HydraDig":
+                audioSrc.PlayOneShot(hydraDig, 2f);
                 break;
         }
     }
