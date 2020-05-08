@@ -18,6 +18,8 @@ public class HydraShoot : MonoBehaviour
     {
         fireForce = 15f;
         b = new GameObject[firePoints.Length];
+
+        target = GameObject.Find("Player");
     }
     void rotateFirePoint()
     {
@@ -27,18 +29,7 @@ public class HydraShoot : MonoBehaviour
 
             aimAngle = Mathf.Atan2(-aim.x, aim.y) * Mathf.Rad2Deg;
             firePoints[i].transform.rotation = Quaternion.Euler(0, 0, aimAngle);
-            //Debug.Log("FirePoint["+i+"]: " + firePoints[i].transform.rotation);
         }
-        //Debug.Log("------");
-        /*
-        Vector2 aim = firePoint.transform.position - target.transform.position;
-        //aim *= -1f;
-
-        aimAngle = Mathf.Atan2(-aim.x, aim.y) * Mathf.Rad2Deg;
-        firePoint.transform.rotation = Quaternion.Euler(0, 0, aimAngle);
-        Debug.Log("Player: " + target.transform.position);
-        Debug.Log("FirePoint: " + firePoint.transform.position);
-        Debug.Log("AimAngle"+aimAngle);*/
     }
     public void ChargeBullet()
     {
@@ -57,7 +48,6 @@ public class HydraShoot : MonoBehaviour
         for (int i = 0; i < firePoints.Length; i++)
         {
             b[i].transform.position = firePoints[i].transform.position;
-            //b[i].transform.position = new Vector3(transform.position.x + Random.Range(-0.25f, 0.25f), transform.position.y + Random.Range(-0.25f, 0.25f), 0);
             b[i].transform.rotation = firePoints[i].transform.rotation;
             b[i].GetComponent<CircleCollider2D>().enabled = true;
             Rigidbody2D bRB = b[i].GetComponent<Rigidbody2D>();
@@ -74,7 +64,6 @@ public class HydraShoot : MonoBehaviour
             for (int i = 0; i < firePoints.Length; i++)
             {
                 b[i].transform.position = firePoints[i].transform.position;
-                //b[i].transform.position = new Vector3(transform.position.x + Random.Range(-0.25f, 0.25f), transform.position.y + Random.Range(-0.25f, 0.25f), 0);
                 b[i].transform.rotation = firePoints[i].transform.rotation;
                 b[i].GetComponent<CircleCollider2D>().enabled = true;
                 Rigidbody2D bRB = b[i].GetComponent<Rigidbody2D>();
