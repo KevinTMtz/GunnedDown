@@ -32,9 +32,11 @@ public class CallSaveSystem : MonoBehaviour
         GameData gameData = SaveSystem.LoadGameData(SaveSystem.ActiveSaveSlot);
 
         if (gameData != null) {
-            for (int i=1; i<=gameData.level; i++) {
-                if (gameData.level <= i) {
+            for (int i=1; i<=3; i++) {
+                if (gameData.level >= i) {
                     levelPanel.transform.Find($"Level{i}").transform.Find("Button").GetComponent<Button>().interactable = true;
+                } else {
+                    levelPanel.transform.Find($"Level{i}").transform.Find("Button").GetComponent<Button>().interactable = false;
                 }
             }
         } else {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class ItemsInventory : MonoBehaviour
 {
@@ -35,11 +36,11 @@ public class ItemsInventory : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("PassiveItem")) {
-            string path = "Prefabs/PassiveItems/PassiveItem" + other.gameObject.name.Substring(11);
+            string path = "Prefabs/PassiveItems/PassiveItem" + Regex.Replace(other.gameObject.name, "[^.0-9]", "");
             pickedItem = (GameObject) Resources.Load(path, typeof(GameObject));
             
-            Instantiate(pickedItem, transform.position, Quaternion.identity);
-            itemsInInventory.Add(GameObject.Find("PassiveItem"+other.gameObject.name.Substring(11)+"(Clone)"));
+            GameObject itemInstance = Instantiate(pickedItem, transform.position, Quaternion.identity);
+            itemsInInventory.Add(itemInstance);
             
             // TODO: Add this to the remove method
             if (onItemChangedCallback != null)

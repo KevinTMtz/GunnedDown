@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, reload1, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig;
     static AudioSource audioSrc;
 
     public static SoundManager instance;
@@ -52,6 +52,8 @@ public class SoundManager : MonoBehaviour
         sound6 = Resources.Load<AudioClip>("Sounds/Explosions/explodemini");
         sound8 = Resources.Load<AudioClip>("Sounds/Mix/metal_slide");
         gameOver = Resources.Load<AudioClip>("Sounds/Mix/gameOver");
+
+        reload1 = Resources.Load<AudioClip>("Sounds/Guns/reload1");
         
         // Minotaur Enemy
         minotaur = Resources.Load<AudioClip>("Sounds/Enemies/Minotaur/Minotaur");
@@ -138,6 +140,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Steps":
                 audioSrc.PlayOneShot(sound5, 0.5f);
+                break;
+            case "Reload1":
+                audioSrc.PlayOneShot(reload1, 1f);
                 break;
 
             // Break

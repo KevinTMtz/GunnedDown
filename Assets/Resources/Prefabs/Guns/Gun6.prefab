@@ -191,4 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eee06db8cb044a07a256ca2f42d3781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootWaitTime: 0.35
+  shootWaitTime: 0.45
+  cartridgeSize: 8
+  ammobagSize: 100
+  reloadTime: 2
