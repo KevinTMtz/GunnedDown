@@ -70,14 +70,14 @@ public class Shoot : MonoBehaviour
         if (Time.time > endTime && wait == false)
             wait = true;
 
-        if ((Input.GetButtonDown("Fire1")||heldOn) && wait && Time.timeScale!=0 && remainingBulletsInCartridge>0 && !reloading) {
+        if ((Input.GetButtonDown("Fire1") || heldOn) && wait && Time.timeScale!=0 && remainingBulletsInCartridge>0 && !reloading) {
             ShootBullet();
             startTime = Time.time;
             endTime = startTime + shootWaitTime;
             wait = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !reloading) {
+        if ((Input.GetKeyDown(KeyCode.R) || (remainingBulletsInCartridge == 0) && (Input.GetButtonDown("Fire1"))) && !reloading && remainingBulletsInCartridge < cartridgeSize) {
             StartCoroutine(ReloadTime());
         }
     }
@@ -144,5 +144,14 @@ public class Shoot : MonoBehaviour
 
     public bool Reloading {
         set { reloading = value; }
+    }
+
+    public bool AbleToRefill {
+        get {
+            if (remainingBulletsTotal < ammobagSize || remainingBulletsInCartridge < cartridgeSize)
+                return true;
+            else
+                return false;
+        }
     }
 }

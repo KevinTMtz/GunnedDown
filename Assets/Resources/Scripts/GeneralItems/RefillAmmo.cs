@@ -15,9 +15,10 @@ public class RefillAmmo : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("Player")) {
             GameObject gun = gunsInventory.GetActiveWeapon();
+            Shoot gunShoot = gun.GetComponent<Shoot>();
             
-            if (gun != null) {
-                gun.GetComponent<Shoot>().FillAmmo();
+            if (gun != null && gunShoot.AbleToRefill) {
+                gunShoot.FillAmmo();
                 Destroy(gameObject);
             }
         }
