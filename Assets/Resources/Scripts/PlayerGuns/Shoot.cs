@@ -31,12 +31,15 @@ public class Shoot : MonoBehaviour
 
     private Text cartridgeTxt;
     private Text ammoBagTxt;
+
+    private GameObject reloadIndicator;
     
     // Start is called before the first frame update
     void Start()
     {
         cartridgeTxt = GameObject.Find("CartridgeTxt").GetComponent<Text>();
         ammoBagTxt = GameObject.Find("AmmoBagTxt").GetComponent<Text>();
+        reloadIndicator = GameObject.Find("Player").transform.Find("ReloadIndicator").gameObject;
         
         SelectBullet();
 
@@ -89,11 +92,13 @@ public class Shoot : MonoBehaviour
 
     private IEnumerator ReloadTime() {
         reloading = true;
+        reloadIndicator.SetActive(true);
         SoundManager.PlaySound("Reload1");
         yield return new WaitForSeconds(reloadTime);
         ReloadCartridge();
         UpdateGUI();
         reloading = false;
+        reloadIndicator.SetActive(false);
     }
 
     private void ReloadCartridge() {
@@ -143,7 +148,10 @@ public class Shoot : MonoBehaviour
     }
 
     public bool Reloading {
-        set { reloading = value; }
+        set { 
+            reloading = value;
+            reloadIndicator.SetActive(value);
+        }
     }
 
     public bool AbleToRefill {

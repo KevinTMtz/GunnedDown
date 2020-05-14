@@ -80,8 +80,10 @@ public class GunsInventory : MonoBehaviour
             string path = "Prefabs/Guns/Gun" + Regex.Replace(other.gameObject.name, "[^.0-9]", "");
             pickedGun = (GameObject) Resources.Load(path, typeof(GameObject));
             
-            if (gunsInInventory.Count > 0)
+            if (gunsInInventory.Count > 0) {
                 gunsInInventory[activeWeapon].SetActive(false);
+                gunsInInventory[activeWeapon].GetComponent<Shoot>().Reloading = false;
+            }
             
             gunsInInventory.Add(Instantiate(pickedGun, transform.position, Quaternion.identity));
 
