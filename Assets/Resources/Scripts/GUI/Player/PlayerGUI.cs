@@ -12,6 +12,7 @@ public class PlayerGUI : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject dialogueMenu;
     public GameObject gameOverMenu;
+    public GameObject marineSelection;
 
     private Scene activeScene;
 
@@ -20,7 +21,6 @@ public class PlayerGUI : MonoBehaviour
     private PlayerHealth playerHealth;
     
     void Start() {
-        Time.timeScale = 1;
         pauseMenuActive = false;
         inventoryMenuActive = false;
         activeScene = SceneManager.GetActiveScene();
@@ -28,6 +28,9 @@ public class PlayerGUI : MonoBehaviour
         dialogueManager = FindObjectOfType<DialogueManager>();
 
         playerHealth = FindObjectOfType<PlayerHealth>();
+
+        marineSelection.SetActive(true);
+        pauseMenuBackground.SetActive(true);
     }
     
     // Update is called once per frame
@@ -35,10 +38,10 @@ public class PlayerGUI : MonoBehaviour
     {
         bool dialogueCheck = dialogueManager.DialoguePanelIsActive;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && !dialogueCheck && !playerHealth.IsKill)
+        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && !dialogueCheck && !playerHealth.IsKill && !marineSelection.activeSelf)
             ShowPauseMenu();
 
-        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && !dialogueCheck && !playerHealth.IsKill)
+        if (Input.GetKeyDown(KeyCode.E) && !pauseMenuActive && !dialogueCheck && !playerHealth.IsKill && !marineSelection.activeSelf)
             ShowInventory();
 
         if (playerHealth.IsKill && Time.timeScale != 0) {

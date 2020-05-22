@@ -15,7 +15,7 @@ public class PlayerAim : MonoBehaviour
     void Start()
     {
         //Hide mouse cursor
-        Cursor.visible = false;
+        //Cursor.visible = false;
 
         aimPoint = GameObject.Find("AimPoint");
         aimRb2D = aimPoint.GetComponent<Rigidbody2D>();
