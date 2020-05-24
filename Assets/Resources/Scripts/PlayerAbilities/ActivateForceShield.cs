@@ -5,11 +5,8 @@ using UnityEngine;
 public class ActivateForceShield : MonoBehaviour
 {
     private GameObject forceShield;
-
     private CapsuleCollider2D bc2d;
-
     private PlayerHealth playerHealth;
-
     private bool wait;
     
     // Start is called before the first frame update
@@ -40,7 +37,7 @@ public class ActivateForceShield : MonoBehaviour
         wait = false;
         yield return new WaitForSeconds(1f);
         playerHealth.invinsible = false;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         wait = true;
     }
 }

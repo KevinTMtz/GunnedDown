@@ -18,7 +18,7 @@ public class BulletController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("Enemy")) {
-            enemyHealth = GameObject.Find(other.gameObject.name).GetComponent("EnemyHealth") as EnemyHealth;
+            enemyHealth = other.gameObject.GetComponent("EnemyHealth") as EnemyHealth;
             enemyHealth.decreaseHealth(damage);
         }
         
@@ -26,12 +26,15 @@ public class BulletController : MonoBehaviour {
             BossHealth bossHealth = other.GetComponent<BossHealth>();
             bossHealth.TakeDamage(damage);
         }
+        
         if (other.tag.Equals("Hydra"))
         {
             HydraHealth bossHealth = other.GetComponent<HydraHealth>();
             bossHealth.TakeDamage(damage);
         }
+
         bool check = (!other.tag.Equals("Player") && !other.tag.Equals("PlayerChild") && !other.tag.Equals("Bullet") && !other.tag.Equals("Hole") && !other.tag.Equals("EnemyBullet") &&!other.tag.Equals("Ignore"));
+        
         if (check) {
             Destroy(gameObject);
 

@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     
-    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, reload1, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig;
+    public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, reload1, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig, energyShot;
     static AudioSource audioSrc;
 
     public static SoundManager instance;
@@ -54,6 +54,7 @@ public class SoundManager : MonoBehaviour
         gameOver = Resources.Load<AudioClip>("Sounds/Mix/gameOver");
 
         reload1 = Resources.Load<AudioClip>("Sounds/Guns/reload1");
+        energyShot = Resources.Load<AudioClip>("Sounds/PlayerAbilities/retro_shot");
         
         // Minotaur Enemy
         minotaur = Resources.Load<AudioClip>("Sounds/Enemies/Minotaur/Minotaur");
@@ -159,6 +160,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "MetalSlide":
                 audioSrc.PlayOneShot(sound8, 1f);
+                break;
+            case "EnergyShot":
+                audioSrc.PlayOneShot(energyShot, 0.75f);
                 break;
 
             // Enemy Minotaur

@@ -80,7 +80,7 @@ public class Shoot : MonoBehaviour
             wait = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.R) || (remainingBulletsInCartridge == 0) && (Input.GetButtonDown("Fire1"))) && !reloading && remainingBulletsInCartridge < cartridgeSize) {
+        if ((Input.GetKeyDown(KeyCode.R) || (remainingBulletsInCartridge == 0) && (Input.GetButtonDown("Fire1"))) && !reloading && remainingBulletsInCartridge<cartridgeSize && remainingBulletsTotal>0) {
             StartCoroutine(ReloadTime());
         }
     }

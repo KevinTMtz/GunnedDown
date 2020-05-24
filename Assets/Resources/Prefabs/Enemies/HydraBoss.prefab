@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 4003701182101940093}
   m_Layer: 0
   m_Name: HydraBoss
-  m_TagString: Hydra
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 4003701182402463056}
   - component: {fileID: 4003701182402463060}
   - component: {fileID: 871424399076283390}
+  - component: {fileID: 1679963255}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Hydra
@@ -513,6 +514,27 @@ MonoBehaviour:
   numberArms: 10
   obstacle: {fileID: 4056997453361879117, guid: b169f01e033a70745b0c6a1f2b5dfced,
     type: 3}
+--- !u!50 &1679963255
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003701182402463050}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4003701182564195905
 GameObject:
   m_ObjectHideFlags: 0

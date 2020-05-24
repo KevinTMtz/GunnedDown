@@ -8,9 +8,9 @@ public class SelectMarine : MonoBehaviour
     private SpriteRenderer sprite;
 
     private ActivateForceShield forceField;
-    // private ActivateTurret turret;
-    // private ActivateBomb bomb;
-    // private ActivateRadialAttack radialAtk;
+    private ActivateTurret turret;
+    private ActivateBomb bomb;
+    private ActivateRadialAttack radialAtk;
     
     void Start()
     {
@@ -29,8 +29,8 @@ public class SelectMarine : MonoBehaviour
     }
 
     public void SelectSebas() {
-        forceField = player.GetComponent<ActivateForceShield>();
-        forceField.enabled = true;
+        turret = player.GetComponent<ActivateTurret>();
+        turret.enabled = true;
         sprite.color = new Color(232f/255f, 255f/255f, 100f/255f);
         Cursor.visible = false;
         Time.timeScale = 1;
@@ -38,16 +38,16 @@ public class SelectMarine : MonoBehaviour
     }
     
     public void SelectMario() {
-        forceField = player.GetComponent<ActivateForceShield>();
-        forceField.enabled = true;
+        bomb = player.GetComponent<ActivateBomb>();
+        bomb.enabled = true;
         Cursor.visible = false;
         Time.timeScale = 1;
         SoundManager.PlaySound("MenuSound");
     }
 
     public void SelectEfren() {
-        forceField = player.GetComponent<ActivateForceShield>();
-        forceField.enabled = true;
+        radialAtk = player.GetComponent<ActivateRadialAttack>();
+        radialAtk.enabled = true;
         sprite.color = new Color(255f/255f, 118f/255f, 93f/255f);
         Cursor.visible = false;
         Time.timeScale = 1;
