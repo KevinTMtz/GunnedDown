@@ -339,9 +339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.475
+  m_FalloffIntensity: 0.7
   m_Color: {r: 0.90860856, g: 0.5990566, b: 1, a: 1}
-  m_Intensity: 0.75
+  m_Intensity: 0.65
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 70574750341103779, guid: 1366b66eab3e64ce3bb11a7460848939, type: 3}
-  waitTime: 10
+  waitTime: 8
 --- !u!114 &1640326964923790679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bomb: {fileID: 5683133747206170989, guid: 606b29811534c4981afb901fb22cbeda, type: 3}
-  waitTime: 3
+  waitTime: 3.5
   shootPoint: {fileID: 1827595075}
 --- !u!114 &6716799490233252648
 MonoBehaviour:
