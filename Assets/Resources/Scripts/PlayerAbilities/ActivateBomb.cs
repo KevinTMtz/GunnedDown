@@ -1,26 +1,18 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateBomb : MonoBehaviour
-{
+public class ActivateBomb : MonoBehaviour {
     public GameObject bomb;
     private bool wait;
     public float waitTime;
-
     public Transform shootPoint;
-
     private float aimAngle;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         wait = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (Input.GetButtonDown("Fire2") && wait && Time.timeScale != 0) {
             StartCoroutine(waitToBomb());
             GameObject bombInstantiated = Instantiate(bomb, transform.position, transform.rotation);

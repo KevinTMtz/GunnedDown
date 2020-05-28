@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
-{
+public class DialogueManager : MonoBehaviour {
     private Queue<string> sentences;
 
     private GameObject dialoguePanel;
@@ -16,9 +15,7 @@ public class DialogueManager : MonoBehaviour
     private bool isWriting;
     private bool isWritingStop;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         sentences = new Queue<string>();
         dialoguePanel = FindObjectOfType<PlayerGUI>().DialoguePanel;
         dialoguePanelText = dialoguePanel.transform.GetChild(0).GetChild(0).GetComponent<Text>();
@@ -41,8 +38,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
-        {
+        foreach (string sentence in dialogue.sentences) {
             sentences.Enqueue(sentence);
         }
 
@@ -60,7 +56,6 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
         } else {
             string sentence = sentences.Dequeue();
-
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
         }
@@ -84,7 +79,6 @@ public class DialogueManager : MonoBehaviour
                 break;
             } else {
                 dialoguePanelText.text += letter;
-                
                 yield return new WaitForSecondsRealtime(0.035f);
             }
         }

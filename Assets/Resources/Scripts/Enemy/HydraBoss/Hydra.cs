@@ -1,15 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Hydra : MonoBehaviour
-{
+public class Hydra : MonoBehaviour {
     public Transform[] targets;
     public int lastTarget;
-    public void PlaySound(string sound)
-    {
-        switch (sound)
-        {
+
+    public void PlaySound(string sound) {
+        switch (sound) {
             case "HydraLament":
                 SoundManager.PlaySound("HydraLament");
                 break;
@@ -23,8 +19,8 @@ public class Hydra : MonoBehaviour
                 break;
         }
     }
-    public void AutoDestoy()
-    {
+
+    public void AutoDestoy() {
         Destroy(gameObject);
     }
 }

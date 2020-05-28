@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SelectMarine : MonoBehaviour
-{
+public class SelectMarine : MonoBehaviour {
     private GameObject player;
     private SpriteRenderer sprite;
 
@@ -12,8 +9,7 @@ public class SelectMarine : MonoBehaviour
     private ActivateBomb bomb;
     private ActivateRadialAttack radialAtk;
     
-    void Start()
-    {
+    void Start() {
         Time.timeScale = 0;
         player = GameObject.Find("Player");
         sprite = player.GetComponent<SpriteRenderer>();

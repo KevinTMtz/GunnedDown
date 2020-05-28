@@ -1,37 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class HydraObstacle : MonoBehaviour
-{
+public class HydraObstacle : MonoBehaviour {
     public int damage;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void AutoDestroy()
-    {
+    public void AutoDestroy() {
         Destroy(gameObject);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-        {
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
             collision.gameObject.GetComponent<PlayerHealth>().decreaseHealth(damage);
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, -collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
         }
     }
 
-    public void PlaySound()
-    {
-        SoundManager.PlaySound("Obstacle");   
+    public void PlaySound() {
+        SoundManager.PlaySound("Obstacle");
     }
-
 }

@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
-{   
+public class PlayerHealth : MonoBehaviour {   
     private int health;
     private bool isKill;
 
@@ -17,37 +14,26 @@ public class PlayerHealth : MonoBehaviour
 
     private GameObject bloodHeal1;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         health = 100;
         isKill = false;
 
-        healthBar = GameObject.Find("HealthBar").GetComponent("HealthBar") as HealthBar;
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         healthBar.SetMaxHealth(health);
 
-        blood1 = (GameObject) Resources.Load("Prefabs/Effects/BloodEffect1", typeof(GameObject));
-
-        bloodHeal1 = (GameObject) Resources.Load("Prefabs/Effects/HealEffect1", typeof(GameObject));
+        blood1 = Resources.Load<GameObject>("Prefabs/Effects/BloodEffect1");
+        bloodHeal1 = Resources.Load<GameObject>("Prefabs/Effects/HealEffect1");
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
+    void Update() {   
         if (health == 0 && !isKill) {
-            //Debug.Log("You died!!!");
             isKill = true;
         }
     }
 
     public void decreaseHealth(int damage) {
         if (!invinsible) {
-            if (health - damage < 0) {
-                health = 0;
-            } else {
-                health -= damage;
-            }
-
+            health = Math.Max(0, health - damage);
             healthBar.SetHealth(health);
             GameObject blood = Instantiate(blood1, transform.position, transform.rotation);
             blood.transform.SetParent(transform);
@@ -56,12 +42,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void IncreaseHealth(int heal) {
-        if (health + heal > 100) {
-            health = 100;
-        } else {
-            health += heal;
-        }
-
+        health = Math.Min(100, health + heal);
         healthBar.SetHealth(health);
         GameObject blood = Instantiate(bloodHeal1, transform.position, transform.rotation);
         blood.transform.SetParent(transform);

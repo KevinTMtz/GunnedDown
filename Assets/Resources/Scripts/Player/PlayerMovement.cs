@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     // Movement attributes
     private Vector3 movementSpeed;
     private float speedX;
@@ -12,16 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public GameObject dust;
     private bool canDust;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         InvokeRepeating ("PlaySound", 0.0f, Random.Range(0.25f, 0.45f));
         canDust = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         Movement();
     }
 
@@ -40,10 +34,11 @@ public class PlayerMovement : MonoBehaviour
         if (movementSpeed.magnitude > 0 && canDust)
             StartCoroutine(WaitToDust());
 
-        //transform.position = transform.position + movementSpeed;
         gameObject.GetComponent<Rigidbody2D>().velocity = movementSpeed;
-        if (speedX != 0 || speedY != 0) gameObject.GetComponent<Animator>().SetBool("isMoving", true);
-        else gameObject.GetComponent<Animator>().SetBool("isMoving", false);
+        if (speedX != 0 || speedY != 0)
+            gameObject.GetComponent<Animator>().SetBool("isMoving", true);
+        else
+            gameObject.GetComponent<Animator>().SetBool("isMoving", false);
     }
 
     private IEnumerator WaitToDust () {

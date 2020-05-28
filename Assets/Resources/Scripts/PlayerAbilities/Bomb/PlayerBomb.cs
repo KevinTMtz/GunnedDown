@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerBomb : MonoBehaviour
-{
+public class PlayerBomb : MonoBehaviour {
     public GameObject explosion;
 
     private EnemyHealth enemyHealth;
@@ -11,16 +8,8 @@ public class PlayerBomb : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Explode() {
@@ -28,15 +17,14 @@ public class PlayerBomb : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag.Equals("Enemy")) {
-            enemyHealth = other.gameObject.GetComponent("EnemyHealth") as EnemyHealth;
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Enemy")) {
+            enemyHealth = other.gameObject.GetComponent< EnemyHealth>();
             enemyHealth.decreaseHealth(damage);
-        } else if (other.tag.Equals("Boss")) {
+        } else if (other.CompareTag("Boss")) {
             BossHealth bossHealth = other.GetComponent<BossHealth>();
             bossHealth.TakeDamage(damage);
-        } else if (other.tag.Equals("Hydra")) {
+        } else if (other.CompareTag("Hydra")) {
             HydraHealth bossHealth = other.GetComponent<HydraHealth>();
             bossHealth.TakeDamage(damage);
         }

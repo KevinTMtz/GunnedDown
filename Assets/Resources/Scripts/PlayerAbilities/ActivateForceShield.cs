@@ -1,29 +1,21 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateForceShield : MonoBehaviour
-{
+public class ActivateForceShield : MonoBehaviour {
     private GameObject forceShield;
     private CapsuleCollider2D bc2d;
     private PlayerHealth playerHealth;
     private bool wait;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        forceShield = (GameObject) Resources.Load("Prefabs/PlayerAbilities/ForceShield", typeof(GameObject));
-
+    void Start() {
+        forceShield = Resources.Load<GameObject>("Prefabs/PlayerAbilities/ForceShield");
         bc2d = GetComponent<CapsuleCollider2D>();
-
         playerHealth = GetComponent<PlayerHealth>();
-
         wait = true;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (Input.GetButtonDown("Fire2") && wait && Time.timeScale != 0) {
             StartCoroutine(playerInvinsible());
             GameObject shieldInstance = Instantiate(forceShield, transform.position, transform.rotation);

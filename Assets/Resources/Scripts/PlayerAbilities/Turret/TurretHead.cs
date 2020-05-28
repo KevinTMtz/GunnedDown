@@ -1,14 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class TurretHead : MonoBehaviour
-{
+public class TurretHead : MonoBehaviour {
     private PlayerTurret playerTurret;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         playerTurret = FindObjectOfType<PlayerTurret>();
     }
 

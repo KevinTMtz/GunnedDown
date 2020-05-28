@@ -1,45 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletController : MonoBehaviour {
     private EnemyHealth enemyHealth;
     public int damage;
     private GameObject explosion;
 
-    // Start is called before the first frame update
     void Start() {
         Destroy(gameObject, 4f);
-
-        explosion = (GameObject) Resources.Load("Prefabs/Effects/BulletExplosionEffect1", typeof(GameObject));
+        explosion = Resources.Load<GameObject>("Prefabs/Effects/BulletExplosionEffect1");
     }
     
-    // Detects if the collision is an object Foreground or enemy
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag.Equals("Enemy")) {
-            enemyHealth = other.gameObject.GetComponent("EnemyHealth") as EnemyHealth;
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Enemy")) {
+            enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
             enemyHealth.decreaseHealth(damage);
         }
         
-        if (other.tag.Equals("Boss")) {
+        if (other.CompareTag("Boss")) {
             BossHealth bossHealth = other.GetComponent<BossHealth>();
             bossHealth.TakeDamage(damage);
         }
         
-        if (other.tag.Equals("Hydra"))
-        {
+        if (other.CompareTag("Hydra")) {
             HydraHealth bossHealth = other.GetComponent<HydraHealth>();
             bossHealth.TakeDamage(damage);
         }
-
-        bool check = (!other.tag.Equals("Player") && !other.tag.Equals("PlayerChild") && !other.tag.Equals("Bullet") && !other.tag.Equals("Hole") && !other.tag.Equals("EnemyBullet") &&!other.tag.Equals("Ignore"));
         
-        if (check) {
+        if (!other.CompareTag("Player") &&
+            !other.CompareTag("PlayerChild") &&
+            !other.CompareTag("Bullet") &&
+            !other.CompareTag("Hole") &&
+            !other.CompareTag("EnemyBullet") &&
+            !other.CompareTag("Ignore")) {
             Destroy(gameObject);
-
             Instantiate(explosion, transform.position, transform.rotation);
-
             SoundManager.PlaySound("Explosion");
         }
     }

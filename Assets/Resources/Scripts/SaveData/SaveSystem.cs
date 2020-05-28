@@ -23,18 +23,14 @@ public static class SaveSystem {
 
     public static GameData LoadGameData(int slotToLoad) {
         string path = Application.persistentDataPath + $"/GunnedDownData{slotToLoad}.save";
-        if (File.Exists(path)) {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            GameData data = formatter.Deserialize(stream) as GameData;
-            stream.Close();
-
-            return data;
-        } else {
-            //Debug.Log("Save file not found in " + path);
+        if (!File.Exists(path))
             return null;
-        }
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Open);
+
+        GameData data = formatter.Deserialize(stream) as GameData;
+        stream.Close();
+        return data;
     }
 
     public static void DeleteFile (int slotToDelete) {
@@ -42,16 +38,18 @@ public static class SaveSystem {
     }
 
     public static int ActiveLevelForSaving {
-        get { 
-            int temp = 0;
-            if (activeLevel == 0)
-                temp = 1;
-            else if (activeLevel == 1)
-                temp = 2;
-            else if (activeLevel == 2 || activeLevel == 3)
-                temp = 3;
-            
-            return temp;
+        get {
+            switch (activeLevel) {
+                case 0:
+                    return 1;
+                case 1:
+                    return 2;
+                case 2:
+                case 3:
+                    return 3;
+                default:
+                    return 0;
+            }
         }
     }
 

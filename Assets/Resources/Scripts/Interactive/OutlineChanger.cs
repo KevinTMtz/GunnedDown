@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class OutlineChanger : MonoBehaviour
-{
+public class OutlineChanger : MonoBehaviour {
     private SpriteRenderer spriteR;
     public float distance;
     private bool isActive;
@@ -13,16 +10,12 @@ public class OutlineChanger : MonoBehaviour
 
     private Transform player;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         player = GameObject.Find("Player").transform;
         spriteR = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (Vector2.Distance(transform.position, player.position) < distance && !isActive) {
             spriteR.material = m2;
             isActive = !isActive;

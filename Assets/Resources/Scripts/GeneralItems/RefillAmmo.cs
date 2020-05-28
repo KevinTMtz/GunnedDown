@@ -1,24 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RefillAmmo : MonoBehaviour
-{
+public class RefillAmmo : MonoBehaviour {
     private GunsInventory gunsInventory;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         gunsInventory = FindObjectOfType<GunsInventory>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Equals("Player")) {
+        if (other.gameObject.CompareTag("Player")) {
             GameObject gun = gunsInventory.GetActiveWeapon();
-
             if (gun != null) {
                 Shoot gunShoot = gun.GetComponent<Shoot>();
-                
                 if (gunShoot.AbleToRefill) {
                     gunShoot.FillAmmo();
                     Destroy(gameObject);

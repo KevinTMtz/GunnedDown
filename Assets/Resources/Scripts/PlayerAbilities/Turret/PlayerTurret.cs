@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTurret : MonoBehaviour
-{
+public class PlayerTurret : MonoBehaviour {
     private Rigidbody2D rb;
     
     public GameObject turretHead;
@@ -24,17 +23,13 @@ public class PlayerTurret : MonoBehaviour
 
     public GameObject explosion;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb = turretHead.GetComponent<Rigidbody2D>();
         turretHeadAnimator = turretHead.GetComponent<Animator>();
         startTime = Time.time;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (target != null) {
             turretHeadAnimator.SetBool("Shooting", true);
             RotateTurretHead();
@@ -62,7 +57,6 @@ public class PlayerTurret : MonoBehaviour
 
     private void RotateTurretHead() {
         rb.rotation = aimAngle;
-
         if (Mathf.Abs(aimAngle) > 90 && !isFlipped) {
             turretHead.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
             isFlipped = true;
@@ -76,7 +70,6 @@ public class PlayerTurret : MonoBehaviour
         // Get vector relative to turrethead and enemy position
         Vector2 aim = turretHead.transform.position - target.position;
         aim *= -0.5f;
-
         // Get angle of the aim vector
         aimAngle = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
     }

@@ -1,31 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DestructiveObjects : MonoBehaviour
-{
+public class DestructiveObjects : MonoBehaviour {
     private Animator animator;
     private int health;
     public int SetHealth;
 
     public string soundName;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         animator = GetComponent<Animator>();
         health = SetHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (health <= 0)
             DestroyObject();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Equals("Bullet")) {
+        if (other.gameObject.CompareTag("Bullet")) {
             health -= other.gameObject.GetComponent<BulletController>().Damage;
             HitObject();
         }

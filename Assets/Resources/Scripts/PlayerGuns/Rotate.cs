@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Rotate : MonoBehaviour
-{
+public class Rotate : MonoBehaviour {
     // Gun
     private GameObject gun;
     private Rigidbody2D rb;
@@ -22,29 +19,23 @@ public class Rotate : MonoBehaviour
 
     private GameObject muzzle1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         // Get RigidBody of the gun
         rb = gameObject.GetComponent<Rigidbody2D>();
-
         // Get hand of player
         hand = GameObject.Find("Hand");
-
         // Get gun
         gun = GameObject.Find("Gun");
 
         // TODO: If statement for that changes bullet depending on gun
         // Load bullet prefab
-        shoot = gameObject.GetComponent("Shoot") as Shoot;
-        bullet = (GameObject) Resources.Load(shoot.bulletPath, typeof(GameObject));
-
-        muzzle1 = (GameObject) Resources.Load("Prefabs/Effects/ShotEffect1", typeof(GameObject));
+        shoot = gameObject.GetComponent<Shoot>();
+        bullet = Resources.Load<GameObject>(shoot.bulletPath);
+        muzzle1 = Resources.Load<GameObject>("Prefabs/Effects/ShotEffect1");
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         moveWithHand();
     }
 

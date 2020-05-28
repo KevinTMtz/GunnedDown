@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DialogueTriggerCollider : MonoBehaviour
-{
+public class DialogueTriggerCollider : MonoBehaviour {
     public Dialogue dialogue;
 
     public void TriggerDialogue() {
@@ -11,7 +8,7 @@ public class DialogueTriggerCollider : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Equals("Player")) {
+        if (other.gameObject.CompareTag("Player")) {
             SoundManager.PlaySound("Typing");
             TriggerDialogue();
             Destroy(gameObject);

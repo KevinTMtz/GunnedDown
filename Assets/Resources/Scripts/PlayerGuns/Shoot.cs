@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
 using UnityEngine.UI;
 
-public class Shoot : MonoBehaviour
-{
+public class Shoot : MonoBehaviour {
     // Bullet
     private Transform shootPoint;
     private GameObject bullet;
@@ -34,9 +32,7 @@ public class Shoot : MonoBehaviour
 
     private GameObject reloadIndicator;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         cartridgeTxt = GameObject.Find("CartridgeTxt").GetComponent<Text>();
         ammoBagTxt = GameObject.Find("AmmoBagTxt").GetComponent<Text>();
         reloadIndicator = GameObject.Find("Player").transform.Find("ReloadIndicator").gameObject;
@@ -45,9 +41,8 @@ public class Shoot : MonoBehaviour
 
         // Get shootpoint transform and load bullet prefab
         shootPoint = GameObject.Find("ShootPoint").transform;
-        bullet = (GameObject) Resources.Load(path, typeof(GameObject));
-
-        muzzle1 = (GameObject) Resources.Load("Prefabs/Effects/ShotEffect1", typeof(GameObject));
+        bullet = Resources.Load<GameObject>(path);
+        muzzle1 = Resources.Load<GameObject>("Prefabs/Effects/ShotEffect1");
 
         wait = true;
 
@@ -61,9 +56,7 @@ public class Shoot : MonoBehaviour
         wait = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (Input.GetButtonDown("Fire1"))
             heldOn = true;
 
@@ -80,7 +73,10 @@ public class Shoot : MonoBehaviour
             wait = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.R) || (remainingBulletsInCartridge == 0) && (Input.GetButtonDown("Fire1"))) && !reloading && remainingBulletsInCartridge<cartridgeSize && remainingBulletsTotal>0) {
+        if ((Input.GetKeyDown(KeyCode.R) || (remainingBulletsInCartridge == 0 && Input.GetButtonDown("Fire1"))) &&
+            !reloading &&
+            remainingBulletsInCartridge < cartridgeSize &&
+            remainingBulletsTotal > 0) {
             StartCoroutine(ReloadTime());
         }
     }
@@ -103,7 +99,7 @@ public class Shoot : MonoBehaviour
 
     private void ReloadCartridge() {
         if (remainingBulletsTotal > 0 && remainingBulletsInCartridge < cartridgeSize)
-            if (cartridgeSize-remainingBulletsInCartridge > remainingBulletsTotal) {
+            if (cartridgeSize - remainingBulletsInCartridge > remainingBulletsTotal) {
                 remainingBulletsInCartridge += remainingBulletsTotal;
                 remainingBulletsTotal = 0;
             } else if (remainingBulletsInCartridge > 0) {

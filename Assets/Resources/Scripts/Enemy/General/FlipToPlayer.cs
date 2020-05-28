@@ -1,35 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FlipToPlayer : MonoBehaviour
-{
+public class FlipToPlayer : MonoBehaviour {
     private Transform target;
-
-    private SpriteRenderer spriteRenderer;
-
     private bool facingRight;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         target = GameObject.Find("Player").GetComponent<Transform>();
-        
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
         facingRight = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         flipEnemySprite();
     }
 
     void flipEnemySprite() {
-        if (90 > Mathf.Abs(getAngleRelToPlayer()) && facingRight == false) {
+        if (Mathf.Abs(getAngleRelToPlayer()) < 90 && !facingRight) {
             Flip();
-        } else if (90 < Mathf.Abs(getAngleRelToPlayer()) && facingRight == true) {
+        } else if (Mathf.Abs(getAngleRelToPlayer()) > 90 && facingRight) {
             Flip();
         }
     }

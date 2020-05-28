@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class RoomController : MonoBehaviour
-{
+public class RoomController : MonoBehaviour {
     public DoorController[] doors;
     
     // For checking the objective
@@ -25,9 +22,7 @@ public class RoomController : MonoBehaviour
     public string mainTheme;
     public string fightMusic;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         if (hasCameraControl) {
             objectCam = GameObject.Find("Main Camera");
             cam = objectCam.GetComponent<Camera>();
@@ -40,10 +35,7 @@ public class RoomController : MonoBehaviour
         bC2D = gameObject.GetComponent<BoxCollider2D>();
     }
 
-    // TODO: Optimize the update function
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         foreach (GameObject item in toKill) {
             if (item == null)
                 temp.Add(item);
@@ -54,7 +46,7 @@ public class RoomController : MonoBehaviour
         }
 
         if (toKill.Count == 0) {
-            for (int i=0; i<doors.Length; i++)
+            for (int i = 0; i < doors.Length; i++)
                 doors[i].ObjectiveCompleted = true; 
             
             if (hasCameraControl) {
@@ -72,8 +64,8 @@ public class RoomController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Equals("Player")) {
-            for (int i=0; i<doors.Length; i++)
+        if (other.gameObject.CompareTag("Player")) {
+            for (int i = 0; i < doors.Length; i++)
                 doors[i].ObjectiveCompleted = false;
 
             if (hasEnemies)

@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Boss : MonoBehaviour
-{
-    public void PlaySound(string sound)
-    {
-        switch (sound)
-        {
+public class Boss : MonoBehaviour {
+    public void PlaySound(string sound) {
+        switch (sound) {
             case "DragonRoar":
                 SoundManager.PlaySound("DragonRoar");
                 break;
@@ -28,8 +23,8 @@ public class Boss : MonoBehaviour
                 break;
         }
     }
-    public void AutoDestoy()
-    {
+
+    public void AutoDestoy() {
         Destroy(gameObject);
     }
 }

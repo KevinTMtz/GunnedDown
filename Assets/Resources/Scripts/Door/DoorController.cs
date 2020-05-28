@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DoorController : MonoBehaviour
-{
+public class DoorController : MonoBehaviour {
     public Animator animator;
     private Transform player;
 
@@ -18,7 +15,6 @@ public class DoorController : MonoBehaviour
     public Animator animatorChild2;
 
     private AudioSource audioSrc;
-
     public AudioClip audioClip;
     
     private void Start() {
@@ -30,53 +26,31 @@ public class DoorController : MonoBehaviour
     }
     
     private void Update() {
-        closeOrOpen();
-    }
-
-    private void closeOrOpen() {
         if (Vector2.Distance(transform.position, player.position) < distance && !isOpen && objectiveCompleted) {
-            if (inChild)
-                OpenChilds();
-            else
-                Open();
-            
+            if (inChild) SetChildDoors(true);
+            else SetDoor(true);
+
             isOpen = true;
-        } else if (Vector2.Distance(transform.position, player.position) > distance && isOpen || (!objectiveCompleted) && isOpen) {
-            if (inChild)
-                CloseChilds();
-            else
-                Close();
-           
+        } else if ((Vector2.Distance(transform.position, player.position) > distance || !objectiveCompleted) && isOpen) {
+            if (inChild) SetChildDoors(false);
+            else SetDoor(false);
+
             isOpen = false;
         }
     }
-    
-    private void Open() {
+
+    private void SetDoor(bool state) {
         PlayDoorSound();
-        animator.SetBool("isOpen", true);
-    }
-    
-    private void Close() {
-        PlayDoorSound();
-        animator.SetBool("isOpen", false);
+        animator.SetBool("isOpen", state);
     }
 
-    private void OpenChilds() {
+    private void SetChildDoors(bool state) {
         PlayDoorSound();
         if (animatorChild1.gameObject.activeSelf)
-            animatorChild1.SetBool("isOpen", true);
+            animatorChild1.SetBool("isOpen", state);
         if (animatorChild2.gameObject.activeSelf)
-            animatorChild2.SetBool("isOpen", true);
-        GetComponent<BoxCollider2D>().enabled = false;
-    }
-    
-    private void CloseChilds() {
-        PlayDoorSound();
-        if (animatorChild1.gameObject.activeSelf)
-            animatorChild1.SetBool("isOpen", false);
-        if (animatorChild2.gameObject.activeSelf)
-            animatorChild2.SetBool("isOpen", false);
-        GetComponent<BoxCollider2D>().enabled = true;
+            animatorChild2.SetBool("isOpen", state);
+        GetComponent<BoxCollider2D>().enabled = !state;
     }
 
     public bool ObjectiveCompleted {

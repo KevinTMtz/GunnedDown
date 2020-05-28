@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
 
-public class ItemsInventory : MonoBehaviour
-{
+public class ItemsInventory : MonoBehaviour {
     public static ItemsInventory instance;
 
     void Awake () {
@@ -12,7 +10,6 @@ public class ItemsInventory : MonoBehaviour
             Debug.LogWarning("More than one ItemInventory instance");
             return;
         }
-
         instance = this;
     }
 
@@ -21,33 +18,19 @@ public class ItemsInventory : MonoBehaviour
     
     public static List<GameObject> itemsInInventory = new List<GameObject>();
     private GameObject pickedItem;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Equals("PassiveItem")) {
+        if (other.gameObject.CompareTag("PassiveItem")) {
             string path = "Prefabs/PassiveItems/PassiveItem" + Regex.Replace(other.gameObject.name, "[^.0-9]", "");
             pickedItem = (GameObject) Resources.Load(path, typeof(GameObject));
             
             GameObject itemInstance = Instantiate(pickedItem, transform.position, Quaternion.identity);
             itemsInInventory.Add(itemInstance);
             
-            // TODO: Add this to the remove method
             if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
             
-            // TODO: Change Later, just hide the sprite
-            itemsInInventory[itemsInInventory.Count-1].SetActive(false);
+            itemsInInventory[itemsInInventory.Count - 1].SetActive(false);
             
             Destroy(other.gameObject);
 

@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeTrap : MonoBehaviour
-{
+public class TimeTrap : MonoBehaviour {
     private Animator animator;
 
     private bool ableToDamage;
@@ -15,12 +13,9 @@ public class TimeTrap : MonoBehaviour
     public float durationTime;
     public int damage;
     
-    // Start is called before the first frame update
     void Start() {
-        playerHealth = GameObject.Find("Player").GetComponent("PlayerHealth") as PlayerHealth;
-        
+        playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
         animator = GetComponent<Animator>();
-
         ableToDamage = true;
     }
 
@@ -40,8 +35,6 @@ public class TimeTrap : MonoBehaviour
         if (col.tag.Equals("Player"))
             onCollision = false;
     }
-
-    //void OnTriggerStay2D(Collider2D col) {}
 
     IEnumerator activateDamageBox() {
         yield return new WaitForSeconds(waitTime);

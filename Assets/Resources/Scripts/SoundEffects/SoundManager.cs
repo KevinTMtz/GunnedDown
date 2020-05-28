@@ -4,8 +4,7 @@ using System;
 using UnityEngine.Audio;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
-{
+public class SoundManager : MonoBehaviour {
     public Sound[] sounds;
     
     public static AudioClip sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11,sound12, sound13, sound14, spikes, fireShot, mainMenu, typing, hurt, minotaur, minotaurBreath, woodBreak, ceramicBreak, gameOver, reload1, hydraLament, hydraBullet, stickyBullet, hydraObstacle, hydraDig, energyShot;
@@ -26,16 +25,12 @@ public class SoundManager : MonoBehaviour
         foreach (Sound s in sounds) {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-
             s.source.volume = s.volume;
-            //s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
     }
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         // Player
         hurt = Resources.Load<AudioClip>("Sounds/Mix/hurt");
 
@@ -72,9 +67,6 @@ public class SoundManager : MonoBehaviour
         spikes = Resources.Load<AudioClip>("Sounds/Traps/spikes");
         fireShot = Resources.Load<AudioClip>("Sounds/Traps/fireShot");
 
-        // Music
-
-
         // GUI
         sound7 = Resources.Load<AudioClip>("Sounds/Menu/positive");
         typing = Resources.Load<AudioClip>("Sounds/Mix/typing");
@@ -88,10 +80,6 @@ public class SoundManager : MonoBehaviour
 
         audioSrc = GetComponent<AudioSource>();
     }
-
-    // FindObjectOfType<SoundManager>().Play("SongName");
-    // SoundManager.PlaySound("SongName");
-    // FindObjectOfType<SoundManager>().StopPlaying("sound string name");
 
     public void Play(string name) {
         Sound s = Array.Find(sounds, sound => sound.name == name);

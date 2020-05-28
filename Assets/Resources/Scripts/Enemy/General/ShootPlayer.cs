@@ -1,10 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Text.RegularExpressions;
 
-public class ShootPlayer : MonoBehaviour
-{
+public class ShootPlayer : MonoBehaviour {
     // Bullet
     private Transform shootPoint;
     public GameObject bullet;
@@ -18,14 +15,11 @@ public class ShootPlayer : MonoBehaviour
     
     public float waitToShoot;
 
-    // Cannon Rotation
     private float aimAngle;
 
     private GameObject target;
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         ableToShoot = true;
 
         // Get shootpoint transform and load bullet prefab
@@ -38,9 +32,7 @@ public class ShootPlayer : MonoBehaviour
         target = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (ableToShoot && !shootFromAnimator) { 
             StartCoroutine(ShootBulletCoroutine());
             ableToShoot = false;

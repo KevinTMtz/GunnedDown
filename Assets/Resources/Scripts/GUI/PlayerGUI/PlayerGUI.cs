@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerGUI : MonoBehaviour
-{
+public class PlayerGUI : MonoBehaviour {
     private bool pauseMenuActive;
     private bool inventoryMenuActive;
     public GameObject pauseMenuBackground;
@@ -15,9 +12,7 @@ public class PlayerGUI : MonoBehaviour
     public GameObject marineSelection;
 
     private Scene activeScene;
-
     private DialogueManager dialogueManager;
-
     private PlayerHealth playerHealth;
     
     void Start() {
@@ -33,9 +28,7 @@ public class PlayerGUI : MonoBehaviour
         pauseMenuBackground.SetActive(true);
     }
     
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         bool dialogueCheck = dialogueManager.DialoguePanelIsActive;
 
         if (Input.GetKeyDown(KeyCode.Escape) && !inventoryMenuActive && !dialogueCheck && !playerHealth.IsKill && !marineSelection.activeSelf)
@@ -56,20 +49,11 @@ public class PlayerGUI : MonoBehaviour
 
     public void ShowPauseMenu() {
         PlayMenuSound();
-        
-        if (!pauseMenuActive) {
-            pauseMenuActive = true;
-            pauseMenuBackground.SetActive(pauseMenuActive);
-            pauseMenu.SetActive(pauseMenuActive);
-            Cursor.visible = true;
-            Time.timeScale = 0;
-        } else {
-            pauseMenuActive = false;
-            pauseMenuBackground.SetActive(pauseMenuActive);
-            pauseMenu.SetActive(pauseMenuActive);
-            Cursor.visible = false;
-            Time.timeScale = 1;
-        }
+        pauseMenuActive = !pauseMenuActive;
+        pauseMenuBackground.SetActive(pauseMenuActive);
+        pauseMenu.SetActive(pauseMenuActive);
+        Cursor.visible = pauseMenuActive;
+        Time.timeScale = pauseMenuActive ? 0 : 1;
     }
 
     public void ShowInventory() {
@@ -93,7 +77,6 @@ public class PlayerGUI : MonoBehaviour
     public void Restart() {
         PlayMenuSound();
         FindObjectOfType<SoundManager>().StopAllSongs();
-        // TODO: Change later
         ItemsInventory.itemsInInventory.Clear();
         SceneManager.LoadScene(activeScene.name);
     }
@@ -105,7 +88,6 @@ public class PlayerGUI : MonoBehaviour
     public void ReturnToMenu() {
         PlayMenuSound();
         FindObjectOfType<SoundManager>().StopAllSongs();
-        // TODO: Change later
         ItemsInventory.itemsInInventory.Clear();
         SceneManager.LoadScene("MainMenu");
     }

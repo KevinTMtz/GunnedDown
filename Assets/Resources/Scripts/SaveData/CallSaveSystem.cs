@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CallSaveSystem : MonoBehaviour
-{
+public class CallSaveSystem : MonoBehaviour {
     public GameObject slotsPanel; 
     public GameObject levelPanel;
     
@@ -17,7 +14,7 @@ public class CallSaveSystem : MonoBehaviour
     }
 
     public void CheckSaveSlots () {
-        for (int i=1; i<=3; i++) {
+        for (int i = 1; i <= 3; i++) {
             if (SaveSystem.LoadGameData(i) != null) {
                 slotsPanel.transform.Find($"Slot {i}").GetComponent<Image>().color = Color.white;
                 slotsPanel.transform.Find($"Slot {i}").transform.Find("DeleteButton").GetComponent<Button>().interactable = true;
@@ -30,17 +27,12 @@ public class CallSaveSystem : MonoBehaviour
 
     public void CheckSaveLevel () {
         GameData gameData = SaveSystem.LoadGameData(SaveSystem.ActiveSaveSlot);
-
         if (gameData != null) {
-            for (int i=1; i<=3; i++) {
-                if (gameData.level >= i) {
-                    levelPanel.transform.Find($"Level{i}").transform.Find("Button").GetComponent<Button>().interactable = true;
-                } else {
-                    levelPanel.transform.Find($"Level{i}").transform.Find("Button").GetComponent<Button>().interactable = false;
-                }
+            for (int i = 1; i <= 3; i++) {
+                levelPanel.transform.Find($"Level{i}").transform.Find("Button").GetComponent<Button>().interactable = gameData.level >= i;
             }
         } else {
-            for (int i=1; i<=3; i++) {
+            for (int i = 1; i <= 3; i++) {
                 levelPanel.transform.Find($"Level{i}").transform.Find("Button").GetComponent<Button>().interactable = false;
             }
         }
